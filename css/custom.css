@@ -1,0 +1,293 @@
+.site-header, 
+.site-header.fixed {
+    padding-top: 45px;
+}
+
+#masthead .site-logo{
+    max-height: 115px;
+}
+
+#masthead .social-widget {
+    margin: -50px 0 0 0;
+}
+
+#masthead .social-widget a {
+    text-align: center;
+    height: 28px;
+    width: 28px;
+    padding: 0 !important;
+    margin-left: 1px;
+}
+
+#masthead .social-widget a i {
+    line-height: 28px !important;
+}
+
+#mainnav {
+    margin: -56px 0 0 0;
+}
+
+#mainnav ul li a {
+    font-size: 16px;
+    font-weight: 600 !important
+}
+
+#mainnav ul li.current-menu-item a {
+    color: #5fc2c5;
+}
+
+#slideshow .slide-inner{
+    left: 0;
+    max-width: 1200px;
+}
+
+.botoes-slider{
+    background: #76fcdb!important;
+    border-radius: 5px;
+}
+
+.roll-button{
+    font-size: 14px;
+    line-height: 35px;
+}
+
+.roll-button.customNextBtn {
+    font-size: 14px;
+    line-height: 35px;
+    position: relative;
+}
+
+.botoes-slider::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 28px;
+    background: #fff;
+    top: 4px;
+    right: 50%;
+}
+
+#main {}
+
+#main #sessao .hat-home{
+    color: #fff;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+#main #sessao .box-title {
+    padding: 15px;
+}
+
+#main #sessao .box-title > h3,
+#main #sessao .box-title > h3 > a {
+    font-size: 18px;
+    margin: 0;
+    line-height: 18px;
+}
+
+#main #sessao .palestras #codewidget-6 {
+    margin-top: -46px;
+}
+
+#main #sessao .palestras #codewidget-6 .hat-home{
+    color: #000;
+}
+
+.mec-wrap article:not([class^=mec-event-countdown]):not([class^=mec-event-cover-]).mec-label-canceled:before, 
+.mec-wrap article:not([class^=mec-event-countdown]):not([class^=mec-event-cover-]).mec-label-featured:before {
+    display: none !important;
+}
+
+#footer-gc {
+    position: relative;
+    overflow: hidden;
+    margin-top: -200px;
+    z-index: 0;
+    padding-top: 10em !important;
+}
+
+#footer-gc .col-f .site-logo{
+    max-height: 115px;
+    margin-top: -85px;
+}
+
+#footer-gc .col-s ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#footer-gc .col-s ul li {
+    display: inline-block;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+#footer-gc .col-s ul li a{
+    display: block;
+    color: #fff;
+    padding: 0 7px;
+    position: relative;
+    font-size: 16px;
+    font-family: "Prompt", sans-serif!important;
+    font-weight: 600!important;
+    text-decoration: none;
+    outline: none;
+}
+
+#footer-gc .col-s p {
+    color: #fff;
+    margin: 30px 0;
+}
+
+#footer-gc .col-t {
+    text-align: right;
+}
+
+#footer-gc .col-t .custom-html-widget a{
+    display: inline-block;
+}
+
+#footer-gc .col-t .custom-html-widget {
+    margin-top: -25px;
+}
+
+#footer-gc .facebook,
+#footer-gc .twitter,
+#footer-gc .youtube,
+#footer-gc .linkedin,
+#footer-gc .instagram {
+    background: #fff;
+    color: #373f48;
+    border-radius: 50%;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+    width: 45px;
+    padding: 0.1em 0.5em 0 0.3em;
+    align-items: normal;
+    text-align: center
+}
+
+#footer-gc .facebook i,
+#footer-gc .twitter i,
+#footer-gc .youtube i,
+#footer-gc .linkedin i,
+#footer-gc .instagram i{
+    font-size: 30px;
+    line-height: 45px;
+}
+
+#codewidget-8 {
+    margin-bottom: 65px;
+}
+
+.topo-interna {
+    z-index: auto;
+}
+
+.bg-internas {
+    height: 400px !important;
+}
+
+.topo-interna h2 {
+    font-weight: normal;
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+#listas {
+    margin-top: 15px !important;
+}
+
+#listas .lista-obras strong{
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 15px;
+}
+
+#page {
+    position: relative;
+    z-index: 1;
+}
+
+#content {
+    position: relative;
+    z-index: 1;
+}
+
+#main aside.videos {
+    padding-right: 0 !important;
+}
+
+#main aside.videos .widget_media_image {
+    left: 30px !important;
+    top: -15px !important;
+}
+
+.post-type-archive .bg-internas {
+    background: url(images/bg-grafismo.png) top center #657e9c;
+}
+
+.podcast-widget > div{
+    background-color: #657e9c;
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.podcast-widget > div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    border-radius: 0;
+}
+
+.podcast-widget > div .podcast_player {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+}
+
+.podcast-widget .episode-title,
+.biografias .podcast-episode .episode-title {
+    position: absolute;
+    font-size: 20px;
+    left: 0;
+    top: inherit;
+    bottom: 40px;
+    margin: 0;
+    padding: 15px;
+    z-index: 1;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+}
+
+.podcast-widget .episode-excerpt {
+    display: none;
+}
+
+.mec-calendar .mec-event-article .mec-event-title a {
+    font-size: 18px;
+    margin: 0;
+    line-height: 18px;
+}
+
+.sydney-hero-area > div {
+    position: relative;
+}
+
+.mec-calendar.mec-calendar-daily .mec-calendar-d-table {
+    bottom: -32px !important;
+}
