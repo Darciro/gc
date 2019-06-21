@@ -47,13 +47,15 @@
 }
 
 .roll-button{
-    font-size: 14px;
-    line-height: 35px;
+    font-size: 18px;
+    line-height: 29px;
+    position: relative;
+    font-weight: 100;
+    padding-left: 14px;
+    padding-right: 14px;
 }
 
 .roll-button.customNextBtn {
-    font-size: 14px;
-    line-height: 35px;
     position: relative;
 }
 
@@ -61,10 +63,10 @@
     content: '';
     display: block;
     position: absolute;
-    width: 2px;
-    height: 28px;
-    background: #fff;
-    top: 4px;
+    width: 1px;
+    height: 24px;
+    background: #93f6df;
+    top: 6px;
     right: 50%;
 }
 
@@ -77,7 +79,7 @@
 }
 
 #main #sessao .box-title {
-    padding: 15px;
+    padding: 10px 0;
 }
 
 #main #sessao .box-title > h3,
@@ -224,9 +226,13 @@
     padding-right: 0 !important;
 }
 
-#main aside.videos .widget_media_image {
+#main .videos .widget_media_image {
     left: 30px !important;
-    top: -15px !important;
+    top: 18px !important;
+}
+
+#main.main-artigos .videos .widget_media_image {
+    top: -10px !important;
 }
 
 .post-type-archive .bg-internas {
@@ -291,3 +297,94 @@
 .mec-calendar.mec-calendar-daily .mec-calendar-d-table {
     bottom: -32px !important;
 }
+
+.article-box .box-title{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0 0.3em;
+    position: absolute;
+    width: auto;
+    margin: 8px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+
+.article-box .box-title a.cat{
+    color: #657e9c;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.article-box .box-title .reading-time{
+    color: #9b9b9b;
+    font-size: 12px;
+}
+
+.article-box .box-title .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.article-box .box-title .title > a {
+    font-size: 18px;
+}
+
+.article-box .box-title .leia{
+    background: #b8c671;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #fff!important;
+    font-size: 14px!important;
+    padding: 2px 15px;
+    float: right;
+}
+
+.article-box.news-special .box-title{
+    top: 0 !important;
+}
+
+.mec-wrap.mec-sm959 .mec-calendar:not(.mec-event-calendar-classic):not(.mec-calendar-weekly) .mec-calendar-header {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.mec-wrap.mec-sm959 .mec-calendar:not(.mec-event-calendar-classic):not(.mec-calendar-weekly) .mec-calendar-side {
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+}
+
+.mec-calendar .mec-calendar-events-side {
+    display: none !important
+}
+
+#main.main-artigos .article-box {
+    min-height: 455px;
+}
+
+#load-more-works-cpt {
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    background-color: #88c599;
+    font-weight: bold;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    padding: 2px 30px;
+    margin-top: 30px;
+}
+
+.single .topo-interna{
+    min-height: 200px;
+}
+
+.single #secondary .videos{
+    padding: 1.7em 0em 0em 0em !important;
+}
+

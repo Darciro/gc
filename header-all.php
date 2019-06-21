@@ -58,11 +58,11 @@
                     </div>
                     <div class="col-md-2 col-sm-8 col-xs-12">
                         <div class="textwidget custom-html-widget social-widget">
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/gabriel_chalita/" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/facechalita" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/user/TVChalita" class="youtube"><i class="fa fa-youtube"></i></a>
+                            <a href="https://twitter.com/gabriel_chalita" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <!--<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
                         </div>
                     </div>
                 </div>
@@ -77,16 +77,14 @@
 
         if (in_category(array('noticias', 'artigos'))) {
             $category = get_the_category();
-            echo '<h2 class="container">';
-                echo $category[0]->name;
-            echo '</h2>';
-        } elseif (is_page()) {
-            echo the_title('<h2 class="container">', '</h2>', true);
+            echo '<h2 class="container">' . $category[0]->name . '</h2>';
+        } elseif (is_page() || is_single()) {
+            the_title('<h2 class="container">', '</h2>', true);
 
         } else {
-            if( ! is_post_type_archive() ){
+            /*if( ! is_post_type_archive() ){
                 echo get_the_title();
-            }
+            }*/
         }  ?>
 
         <div class="bg-internas"></div>

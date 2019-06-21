@@ -3,7 +3,7 @@
 get_header('all');
 ?>
 <div id="primary" class="fp-content-area">
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main palestras-main" role="main">
 
         <div id="listas" class="lista-1 col-lg-12">
 

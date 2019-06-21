@@ -336,6 +336,12 @@ function sydney_scripts() {
 	}
 
 	wp_enqueue_style( 'sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), null );
+
+    wp_enqueue_script('galdar-custom-js', get_template_directory_uri() . '/js/galdar-custom.js', array('jquery'), false, true);
+    wp_localize_script( 'galdar-custom-js', 'gs', array(
+            'ajaxurl' => admin_url( 'admin-ajax.php' )
+        )
+    );
 }
 add_action( 'wp_enqueue_scripts', 'sydney_scripts' );
 
@@ -617,3 +623,31 @@ function sydney_welcome_admin_notice() {
 }
 add_action( 'admin_init', array( 'PAnD', 'init' ) );
 add_action( 'admin_notices', 'sydney_welcome_admin_notice' );
+
+add_action('wp_ajax_load_more_works_cpt', 'load_more_works_cpt');
+add_action('wp_ajax_nopriv_load_more_works_cpt', 'load_more_works_cpt');
+
+function load_more_works_cpt () {
+
+    ob_start();
+    $i = 0;
+    $args = array('category_name' => 'obras', 'posts_per_page' => 12, 'offset' => $_POST['index_offset']);
+    $the_query = new WP_Query($args);
+    if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+            <div class="col-md-2 lista-obras">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <img src="<?php the_post_thumbnail_url(); ?>" class="corner"/>
+                </a>
+                <strong><?php the_title(); ?></strong>
+            </div>
+
+    <?php $i++; endwhile; endif; wp_reset_postdata();
+
+    $data['posts'] = ob_get_clean();
+    $data['offset'] = $i;
+    // $data['ended'] = $i <= 12 ? true : false;
+    $data['ended'] = $_POST['index_offset'] >= $the_query->found_posts;
+
+    wp_send_json_success( $data );
+}
