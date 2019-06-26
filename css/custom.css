@@ -28,8 +28,9 @@
 }
 
 #mainnav ul li a {
-    font-size: 16px;
-    font-weight: 600 !important
+    font-size: 14px;
+    font-weight: bold !important;
+    font-family: 'Avenir Next LT Pro' !important;
 }
 
 #mainnav ul li.current-menu-item a {
@@ -299,9 +300,9 @@
 }
 
 .article-box .box-title{
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     background: #fff;
     padding: 0 0.3em;
     position: absolute;
@@ -388,3 +389,18 @@
     padding: 1.7em 0em 0em 0em !important;
 }
 
+.box-img.box-img-land {
+    max-height: 430px;
+    overflow: hidden;
+}
+
+.box-img.box-img-land img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.corner {
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+}

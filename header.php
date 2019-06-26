@@ -35,7 +35,9 @@
 
     <?php do_action('sydney_before_header'); //Hooked: sydney_header_clone() ?>
 
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header topo-internas" role="banner">
+
+        <!--<div class="bg-internas"></div>-->
         <div class="header-wrap">
             <div class="container">
                 <div class="row">
@@ -55,6 +57,15 @@
                         <nav id="mainnav" class="mainnav" role="navigation">
                             <?php wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => 'sydney_menu_fallback')); ?>
                         </nav><!-- #site-navigation -->
+                    </div>
+                    <div class="col-md-2 col-sm-8 col-xs-12">
+                        <div class="textwidget custom-html-widget social-widget">
+                            <a href="https://www.instagram.com/gabriel_chalita/" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/facechalita" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/user/TVChalita" class="youtube"><i class="fa fa-youtube"></i></a>
+                            <a href="https://twitter.com/gabriel_chalita" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <!--<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
+                        </div>
                     </div>
                 </div>
             </div>

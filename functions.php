@@ -52,6 +52,7 @@ function sydney_setup() {
 	add_image_size('chalita-noticia-thumb', 405, 490, true);
 	add_image_size('chalita-artigo-thumb', 400, 430, true);
 	add_image_size('chalita-mas-thumb', 480);
+    add_image_size( 'chalita-palestras-thumb', 750, 430, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -312,6 +313,7 @@ if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
 function sydney_scripts() {
 
 	wp_enqueue_style( 'sydney-fonts', esc_url( sydney_google_fonts() ), array(), null );
+	wp_enqueue_style( 'sydney-custom-fonts', get_template_directory_uri() . '/fonts/custom/avenir-font.css.css', array(), null );
 
 	wp_enqueue_style( 'sydney-style', get_stylesheet_uri(), '', '20180710' );
 
@@ -651,3 +653,28 @@ function load_more_works_cpt () {
 
     wp_send_json_success( $data );
 }
+
+/**
+ * Create a custom post type to manage indications
+ *
+ */
+function palestras_cpt() {
+
+    register_post_type('palestras', array(
+            'labels' => array(
+                'name' => 'Palestras',
+                'singular_name' => 'Palestra',
+                'add_new' => 'Nova palestra',
+                'add_new_item' => 'Nova palestra',
+                'search_items' => 'Procurar palestra',
+                'not_found' => 'Nenhuma palestra encontrada',
+            ),
+            'description' => 'Palestras',
+            'public' => true,
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'taxonomies' => array('post_tag'),
+            'menu_icon' => 'dashicons-clipboard')
+    );
+
+}
+add_action('init', 'palestras_cpt');
