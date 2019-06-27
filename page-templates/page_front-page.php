@@ -74,7 +74,7 @@ get_header(); ?>
                         <div class="col-md-6">
                             <article class="article-box box-img corner">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
+                                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner"/>
                                 </a>
                                 <i class="fa fa-bookmark-o"></i>
                                 <div class="box-title row">
@@ -84,15 +84,15 @@ get_header(); ?>
                                     <div class="col-md-6 text-right">
                                         <span class="reading-time">6 min de leitura</span>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-9">
                                         <h3 class="title">
                                             <a href="<?php the_permalink(); ?>"
                                                title="<?php the_title(); ?>"><?php the_title(); ?>
                                             </a>
                                         </h3>
                                     </div>
-                                    <div class="col-md-12">
-                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Mais palestras</a>
+                                    <div class="col-md-3">
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
                                     </div>
                                 </div>
                             </article>
@@ -112,17 +112,30 @@ get_header(); ?>
         <div class="sessao-3 row">
             <article class="col-lg-8 col-xs-12">
                 <p class="hat-home">Obras</p>
+                <div class="obras-row row">
+                    <?php $args = array('category_name' => 'obras', 'posts_per_page' => 4);
+                    $the_query = new WP_Query($args);
+                    if ($the_query->have_posts()) :
+                        while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                <div class="obras-row">
-                    <?php if (dynamic_sidebar('obras')) : else : endif; ?>
+                            <div class="col-md-3 lista-obras">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <img src="<?php the_post_thumbnail_url(); ?>" class="corner"/>
+                                </a>
+                                <strong><?php the_title(); ?></strong>
+                            </div>
+                        <?php endwhile; ?>
 
-                    <p class="text-center"><a href="#">Veja mais obras</a></p>
+                    <?php endif; wp_reset_postdata(); ?>
+                    <p class="text-center">
+                        <a href="<?php echo home_url('?page_id=367'); ?>" id="load-more-works-cpt-2">Veja mais obras</a>
+                    </p>
                 </div>
             </article>
 
-            <article class="bio col-lg-4 col-xs-12">
+            <article class="col-lg-4 col-xs-12">
                 <p class="hat-home">Instagra,</p>
-                <img src="http://gabrielchalita.localhost/wp-content/uploads/2019/05/podcast.png">
+                <img src="http://gabrielchalita.com.br/novosite/wp-content/uploads/2019/05/podcast.png" style="width: 100% !important;">
             </article>
         </div>
 

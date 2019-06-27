@@ -88,14 +88,6 @@ if (!function_exists('sydney_slider_template')) :
                                         <div class="contain animated fadeInRightBig text-slider col-md-12">
                                             <h2 class="maintitle slider_button_text"><?php echo wp_kses_post($titles['slider_title_' . $c]); ?></h2>
                                             <?php /* subtitulo <p class="subtitle"><?php echo esc_html( $subtitles['slider_subtitle_' . $c] ); ?></p> */ ?>
-
-                                            <p class="subtitle">
-                                                <a href="https://www.instagram.com/gabriel_chalita/" class="instagram" class="slider_button_url"><i class="fa fa-instagram"></i></a>
-                                                <a href="https://www.facebook.com/facechalita" class="facebook"><i class="fa fa-facebook"></i></a>
-                                                <a href="https://www.youtube.com/user/TVChalita" class="youtube"><i class="fa fa-youtube"></i></a>
-                                                <a href="https://twitter.com/gabriel_chalita" class="twitter"><i class="fa fa-twitter"></i></a>
-                                                <!--<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
