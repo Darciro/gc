@@ -313,7 +313,7 @@ if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
 function sydney_scripts() {
 
 	wp_enqueue_style( 'sydney-fonts', esc_url( sydney_google_fonts() ), array(), null );
-	wp_enqueue_style( 'sydney-custom-fonts', get_template_directory_uri() . '/fonts/custom/avenir-font.css.css', array(), null );
+	wp_enqueue_style( 'sydney-custom-fonts', get_template_directory_uri() . '/fonts/custom/avenir-font.css', array(), null );
 
 	wp_enqueue_style( 'sydney-style', get_stylesheet_uri(), '', '20180710' );
 

@@ -134,8 +134,13 @@ get_header(); ?>
             </article>
 
             <article class="col-lg-4 col-xs-12">
-                <p class="hat-home">Instagra,</p>
-                <img src="http://gabrielchalita.com.br/novosite/wp-content/uploads/2019/05/podcast.png" style="width: 100% !important;">
+                <p class="hat-home">Instagram</p>
+	            <div class="iframely-embed">
+		            <div class="iframely-responsive" style="height: 140px; padding-bottom: 0;">
+			            <a href="https://www.instagram.com/gabriel_chalita/" data-iframely-url="//cdn.iframe.ly/qN01buT"></a>
+		            </div>
+	            </div>
+	            <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
             </article>
         </div>
 
