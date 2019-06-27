@@ -69,39 +69,34 @@ if (!function_exists('sydney_slider_template')) :
                 $speed = 0;
             }
             ?>
-            <div>
-                <div id="slideshow" class="header-slider" data-speed="<?php echo esc_attr($speed); ?>"
-                     data-mobileslider="<?php echo esc_attr($mobile_slider); ?>">
-                    <div class="slides-container">
+            <div id="slideshow" class="header-slider" data-speed="<?php echo esc_attr($speed); ?>"
+                 data-mobileslider="<?php echo esc_attr($mobile_slider); ?>">
+                <div class="slides-container">
 
-                        <?php $c = 1; ?>
-                        <?php foreach ($images as $image) {
-                            if ($image) {
+                    <?php $c = 1; ?>
+                    <?php foreach ($images as $image) {
+                        if ($image) {
 
-                                $image_alt = sydney_get_image_alt($image);
-                                ?>
-                                <div class="slide-item slide-item-<?php echo $c; ?>"
-                                     style="background-image:url('<?php echo esc_url($image); ?>');">
-                                    <img class="mobile-slide preserve" src="<?php echo esc_url($image); ?>"
-                                         alt="<?php echo esc_attr($image_alt); ?>"/>
-                                    <div class="container slide-inner">
-                                        <div class="contain animated fadeInRightBig text-slider col-md-12">
-                                            <h2 class="maintitle slider_button_text"><?php echo wp_kses_post($titles['slider_title_' . $c]); ?></h2>
-                                            <?php /* subtitulo <p class="subtitle"><?php echo esc_html( $subtitles['slider_subtitle_' . $c] ); ?></p> */ ?>
-                                        </div>
+                            $image_alt = sydney_get_image_alt($image);
+                            ?>
+                            <div class="slide-item slide-item-<?php echo $c; ?>"
+                                 style="background-image:url('<?php echo esc_url($image); ?>');">
+                                <img class="mobile-slide preserve" src="<?php echo esc_url($image); ?>"
+                                     alt="<?php echo esc_attr($image_alt); ?>"/>
+                                <div class="container slide-inner">
+                                    <div class="contain animated fadeInRightBig text-slider col-md-12">
+                                        <h2 class="maintitle slider_button_text"><?php echo wp_kses_post($titles['slider_title_' . $c]); ?></h2>
+                                        <?php /* subtitulo <p class="subtitle"><?php echo esc_html( $subtitles['slider_subtitle_' . $c] ); ?></p> */ ?>
                                     </div>
                                 </div>
-                                <?php
-                            }
-                            $c++;
+                            </div>
+                            <?php
                         }
-                        ?>
-                    </div>
-                    <?php if ($text_slide) : ?>
-                        <?php echo sydney_stop_text(); ?>
-                    <?php endif; ?>
+                        $c++;
+                    }
+                    ?>
                 </div>
-                <?php echo $button; ?>
+	            <?php echo $button; ?>
             </div>
             <?php
         }
@@ -110,9 +105,11 @@ endif;
 
 function gerar_button()
 {
-    return '<div class="contain animated fadeInRightBig text-slider botoes-slider">
-		<a href="javaScript:void(0);"  class="customNextBtn roll-button button-slider"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-		<a href="javaScript:void(0);"  class="customPrevBtn roll-button button-slider"><i class="fa fa-angle-right" aria-hidden="true"></i></a></div>';
+    return '<div id="slide-next-prev-btns" class="container animated fadeInUpBig text-slider botoes-slider">
+		<div class="slide-next-prev-btns-holder text-right">
+			<a href="javaScript:void(0);"  class="customNextBtn roll-button button-slider"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+			<a href="javaScript:void(0);"  class="customPrevBtn roll-button button-slider"><i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+		</div>';
 }
 
 function sydney_slider_button()
