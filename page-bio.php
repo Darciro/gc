@@ -2,61 +2,58 @@
 /* Template Name: Bio */
 get_header('all');
 ?>
-<div id="primary" class="fp-content-area">
+<div id="primary" class="fp-content-area col-lg-12">
     <main id="main" class="site-main" role="main">
 
-        <div id="listas" class="col-lg-12 lista-1 biografias">
-        <div class="row">
-            <?php //I will use WP_Query class instance
-            $args = array('category_name' => 'bio', 'posts_per_page' => 3,);
+	    <?php while ( have_posts() ) : the_post(); ?>
 
-            //Set up a counter
-            $counter = 0;
+		    <div class="content-area col-md-8">
+			    <?php the_content(); ?>
+		    </div><!-- #primary -->
 
-            //Preparing the Loop
-            $query = new WP_Query($args);
+		    <div id="secondary" class="col-md-4">
+			    <p class="hat-home">Palestras</p>
+			    <?php
+			    $args = array(
+				    'post_type' => 'palestras',
+				    'posts_per_page' => 2
+			    );
+			    $the_query = new WP_Query($args);
 
-            //In while loop counter increments by one $counter++
-            if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-                $counter++;
-                //We are in loop so we can check if counter is odd or even
-                if ($counter % 2 == 0) {
-                    echo '<div class="impar col-md-12">';
-                    echo '<div class="esq-txt col-md-6">';
+			    if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                    the_excerpt();
-                    echo '</div>';
-                    echo '<div class="esq-img col-md-6 box-img corner">';
-                    echo '<h3>';
-                    the_title();
-                    echo '</h3>';
-                    the_post_thumbnail();
-                    echo '</div>';
-                    echo '</div>';
-                } else {
-                    if (has_post_thumbnail()) {
-                        echo '<div class="par col-md-12">';
-                        echo '<div class="dir-img col-md-6 box-img corner">';
+				    <article class="article-box box-img corner margin-bottom-30">
+					    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						    <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
+					    </a>
+					    <i class="fa fa-bookmark-o"></i>
+					    <div class="box-title row">
+						    <div class="col-md-6">
+							    <?php
+							    $post_tags = get_the_tags();
+							    if ($post_tags) {
+								    echo '<a href="#" class="cat">' . $post_tags[0]->name . '</a>';
+							    }
+							    ?>
+						    </div>
+						    <div class="col-md-8">
+							    <h3 class="title">
+								    <a href="<?php the_permalink(); ?>"
+								       title="<?php the_title(); ?>"><?php the_title(); ?>
+								    </a>
+							    </h3>
+						    </div>
+						    <div class="col-md-4">
+							    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Mais palestras</a>
+						    </div>
+					    </div>
+				    </article>
 
-                        echo '<h3>';
-                        the_title();
-                        echo '</h3>';
-                        the_post_thumbnail();
-                        echo '</div>';
-                        echo '<div class="dir-txt col-md-6">';
+			    <?php endwhile; wp_reset_postdata(); endif; ?>
+		    </div>
 
-                        the_excerpt();
-                        echo '</div>';
+	    <?php endwhile; // end of the loop. ?>
 
-                        echo '</div>';
-
-                    }
-                }
-            endwhile;
-                wp_reset_postdata(); endif; ?>
-        </div>
-        </div>
-
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 <?php get_footer(); ?>

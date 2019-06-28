@@ -47,8 +47,7 @@ get_header(); ?>
 						</div>
 					</article>
 
-				<?php endwhile;
-					wp_reset_postdata(); endif; ?>
+				<?php endwhile; wp_reset_postdata(); endif; ?>
 
 			</article>
 
@@ -107,8 +106,14 @@ get_header(); ?>
 
 			<article class="col-lg-4 col-xs-12">
 				<p class="hat-home">Biografia</p>
-				<img src="http://gabrielchalita.com.br/novosite/wp-content/uploads/2019/05/academia-letras.png">
-				<?php // if (dynamic_sidebar('bio')) : else : endif; ?>
+				<div class="bio-box corner">
+					<img src="http://gabrielchalita.com.br/novosite/wp-content/uploads/2019/06/gc.jpg">
+					<div class="desc">
+						<p>2017</p>
+						<p>Gabriel Chalita vai presidir a Academia Paulista de Letras</p>
+						<a href="#">Conheça a Biografia</a>
+					</div>
+				</div>
 			</article>
 		</div>
 

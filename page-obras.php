@@ -6,7 +6,7 @@ get_header('all');
     <main id="main" class="site-main" role="main">
 
         <div id="listas" class="col-lg-12 works-cpt-area" data-index="12">
-            <?php $args = array('category_name' => 'obras', 'posts_per_page' => 12,);
+            <?php $args = array('category_name' => 'obras', 'posts_per_page' => 18,);
             $the_query = new WP_Query($args);
             if ($the_query->have_posts()) :
                 while ($the_query->have_posts()) : $the_query->the_post(); ?>

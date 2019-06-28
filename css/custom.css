@@ -357,7 +357,7 @@
 }
 
 #main.main-artigos .article-box {
-    min-height: 455px;
+    min-height: 430px;
 }
 
 #load-more-works-cpt,
@@ -478,6 +478,7 @@
     transform-origin: bottom right;
     background-color: #3e3d47;
     background-image: none !important;
+    bottom: -100px !important
 }
 
 #slide-next-prev-btns {
@@ -513,4 +514,118 @@
     background: #ffffff;
     top: 6px;
     right: 0;
+}
+
+.bio-box {
+    overflow: hidden !important;
+    position: relative;
+}
+
+.bio-box .desc {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #3e3d47;
+    padding: 15px 15px 30px;
+    position: absolute;
+    width: auto;
+    margin: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+
+.bio-box .desc p {
+    margin: 0;
+    color: #fff;
+}
+
+.bio-box .desc a {
+    background: #b8c671;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #fff!important;
+    font-size: 14px!important;
+    padding: 2px 15px;
+    font-family: Arial;
+    margin-top: 15px;
+    position: absolute;
+    width: 160px;
+    text-align: center;
+    bottom: -15px;
+    left: 50%;
+    margin-left: -80px;
+
+}
+
+.videos.videos-no-pd {
+    padding: 0 !important;
+}
+
+.videos.videos-no-pd .hat-home {
+    display: none;
+}
+
+.videos.videos-no-pd .widget_youtube_responsive {
+    margin-top: 20px;
+}
+
+.videos.videos-no-pd .widget_youtube_responsive:first-of-type {
+    margin-top: 0;
+}
+
+#artigos-1 {
+    margin-top: 30px;
+}
+
+#artigos-1,
+#artigos-2,
+#artigos-3,
+#artigos-4 {
+    margin-bottom: 30px;
+}
+
+#artigos-1 .article-box .box-title .leia{
+    margin: 0 !important;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30px !important;
+}
+
+.feature-clients-row .item {
+    text-align: center;
+}
+
+.feature-clients-row .item img{
+    width: 100%;
+    height: auto;
+    max-width: 165px;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-prev,
+.owl-theme .owl-controls .owl-buttons .owl-next{
+    position: absolute;
+    top: 62px;
+    line-height: 30px;
+    font-size: 30px;
+    width: 15px;
+    display: inline-block;
+    left: 0;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-next{
+    left: auto;
+    right: 0;
+}
+
+.content-wrapper {
+    padding: auto !important;
+}
+
+.showcase-interna {
+    margin: auto !important;
+    padding: auto !important;
 }
