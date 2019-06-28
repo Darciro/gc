@@ -878,6 +878,36 @@ function fill_custom_columns($column, $post_id)
 	}
 }
 
+/**
+ * Add new columns to our clients custom post type
+ *
+ */
+add_filter('manage_edit-palestras_columns', 'add_custom_columns_palestras');
+function add_custom_columns_palestras($columns)
+{
+	return array_merge($columns, array(
+		'feature-speech' => 'Palestra em destaque'
+	));
+}
+
+/**
+ * Fill custom columns with data
+ *
+ * @param $column
+ * @param $post_id
+ */
+add_action('manage_posts_custom_column', 'fill_custom_columns_palestras', 10, 2);
+function fill_custom_columns_palestras($column, $post_id)
+{
+	$feature_speech = get_post_meta(get_the_ID(), '_feature-speech', true);
+
+	switch ($column) {
+		case 'feature-speech':
+			echo $feature_speech ? '<span class="dashicons dashicons-star-filled"></span>' : '<span class="dashicons dashicons-star-empty"></span>';
+			break;
+	}
+}
+
 add_filter('manage_posts_columns', 'your_columns_head');
 function your_columns_head($defaults)
 {
@@ -899,3 +929,26 @@ function your_columns_head($defaults)
 
 	return $new;
 }
+
+add_filter('manage_posts_columns', 'your_columns_head_palestras');
+function your_columns_head_palestras($defaults)
+{
+
+	if ($_GET['post_type'] !== 'palestras') {
+		return $defaults;
+	}
+
+	$new = array();
+	$tags = $defaults['feature-speech'];     // save the tags column
+	unset($defaults['feature-speech']);      // remove it from the columns list
+
+	foreach ($defaults as $key => $value) {
+		if ($key == 'date') {                // when we find the date column
+			$new['feature-speech'] = $tags;  // put the tags column before it
+		}
+		$new[$key] = $value;
+	}
+
+	return $new;
+}
+
