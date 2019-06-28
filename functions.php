@@ -688,6 +688,7 @@ function load_more_works_cpt()
  * Create a custom post type to manage speeches
  *
  */
+add_action('init', 'palestras_cpt');
 function palestras_cpt()
 {
 
@@ -709,12 +710,11 @@ function palestras_cpt()
 
 }
 
-add_action('init', 'palestras_cpt');
-
 /**
  * Create a custom post type to manage clients
  *
  */
+add_action('init', 'clients_cpt');
 function clients_cpt()
 {
 
@@ -735,8 +735,6 @@ function clients_cpt()
 
 }
 
-add_action('init', 'clients_cpt');
-
 // Client meta box
 add_action('add_meta_boxes', 'client_metabox');
 function client_metabox()
@@ -756,6 +754,15 @@ function client_metabox()
 		'Cliente em destaque',
 		'feature_client_metabox_field',
 		array('clientes'),
+		'side',
+		'high'
+	);
+
+	add_meta_box(
+		'feature-speeches',
+		'Palestra em destaque',
+		'feature_speech_metabox_field',
+		array('palestras'),
 		'side',
 		'high'
 	);
@@ -783,6 +790,17 @@ function feature_client_metabox_field($post)
 	</label>
 <?php }
 
+function feature_speech_metabox_field($post)
+{
+	wp_nonce_field(plugin_basename(__FILE__), 'feature-speech-nonce');
+	$checked = get_post_meta($post->ID, '_feature-speech', true); ?>
+
+	<label for="feature-speech-checkbox">
+		<input type="checkbox" name="feature-speech" id="feature-speech-checkbox" value="1" <?php echo $checked ? 'checked="checked"' : ''; ?> />
+		Marque esta opção se deseja definir esta palestra como destaque.
+	</label>
+<?php }
+
 add_action('save_post', 'client_metabox_save_postdata');
 function client_metabox_save_postdata($post_id)
 {
@@ -806,6 +824,27 @@ function client_metabox_save_postdata($post_id)
 		update_post_meta($post_ID, '_feature-client', $feature_client);
 	} else {
 		delete_post_meta($post_ID, '_feature-client');
+	}
+}
+
+add_action('save_post', 'speech_metabox_save_postdata');
+function speech_metabox_save_postdata($post_id)
+{
+	if ('palestras' == $_POST['post_type']) {
+		if (!current_user_can('edit_page', $post_id))
+			return;
+	}
+
+	if (!isset($_POST['feature-speech-nonce']) || !wp_verify_nonce($_POST['feature-speech-nonce'], plugin_basename(__FILE__)))
+		return;
+
+	$post_ID = $_POST['post_ID'];
+	$feature_speech = sanitize_text_field($_POST['feature-speech']);
+
+	if ($feature_speech) {
+		update_post_meta($post_ID, '_feature-speech', $feature_speech);
+	} else {
+		delete_post_meta($post_ID, '_feature-speech');
 	}
 }
 
