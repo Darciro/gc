@@ -15,32 +15,76 @@ get_header('all'); ?>
 
 <?php do_action('sydney_before_content'); ?>
 
-<div id="primary" class="content-area col-md-8 <?php echo $fullwidth; ?>">
+<div id="primary" class="content-area <?php echo $fullwidth; ?>">
 
     <?php sydney_yoast_seo_breadcrumbs(); ?>
 
     <main id="main" class="post-wrap" role="main">
 
-        <?php while (have_posts()) : the_post(); ?>
+        <?php
 
-            <?php get_template_part('content', 'single'); ?>
+        $category = get_the_category();
+        $obras_cat = $category[0]->slug;
 
-            <?php // sydney_post_navigation(); ?>
+        if( $obras_cat == 'obras' ) :
+            while (have_posts()) : the_post(); ?>
 
-            <?php
-            // If comments are open or we have at least one comment, load up the comment template
-            /* if ( comments_open() || get_comments_number() ) :
-                comments_template();
-            endif; */
-            ?>
+                <?php get_template_part('content', 'single-obras'); ?>
 
-        <?php endwhile; // end of the loop. ?>
+            <?php endwhile;
 
-    </main><!-- #main -->
-</div><!-- #primary -->
+        else: ?>
 
-<div id="secondary" class="col-md-4">
-    <?php if (dynamic_sidebar('interna-noticias')) : else : endif; ?>
+            <div class="col-md-8">
+                <?php while (have_posts()) : the_post(); ?>
+
+                    <?php get_template_part('content', 'single'); ?>
+
+                <?php endwhile; // end of the loop. ?>
+            </div>
+
+            <div id="secondary" class="col-md-4">
+                <div class="video-sidebar-widget clearfix margin-bottom-30">
+                    <?php if (dynamic_sidebar('interna-noticias')) : else : endif; ?>
+                </div>
+
+                <div class="clearfix">
+                    <?php
+                    $args = array(
+                        'post_type' => 'palestras',
+                        'meta_key' => '_feature-speech',
+                        'posts_per_page' => 1
+                    );
+                    $the_query = new WP_Query($args);
+
+                    if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+                        <article class="article-box box-img corner margin-bottom-30">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
+                            </a>
+                            <i class="fa fa-bookmark-o"></i>
+                            <div class="box-title row">
+                                <div class="col-md-12">
+                                    <h3 class="title text-center">
+                                        <a href="<?php the_permalink(); ?>"
+                                           title="<?php the_title(); ?>"><?php the_title(); ?>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Conheça a palestra</a>
+                                </div>
+                            </div>
+                        </article>
+
+                    <?php endwhile; wp_reset_postdata(); endif; ?>
+                </div>
+            </div>
+
+        <?php endif; ?>
+
+    </main>
 </div>
 
 <?php get_footer(); ?>

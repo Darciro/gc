@@ -14,10 +14,11 @@ get_header('all');
 		    <div id="secondary" class="col-md-4">
 			    <p class="hat-home">Palestras</p>
 			    <?php
-			    $args = array(
-				    'post_type' => 'palestras',
-				    'posts_per_page' => 2
-			    );
+                $args = array(
+                    'post_type' => 'palestras',
+                    'meta_key' => '_feature-speech',
+                    'posts_per_page' => 2
+                );
 			    $the_query = new WP_Query($args);
 
 			    if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -27,26 +28,18 @@ get_header('all');
 						    <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
 					    </a>
 					    <i class="fa fa-bookmark-o"></i>
-					    <div class="box-title row">
-						    <div class="col-md-6">
-							    <?php
-							    $post_tags = get_the_tags();
-							    if ($post_tags) {
-								    echo '<a href="#" class="cat">' . $post_tags[0]->name . '</a>';
-							    }
-							    ?>
-						    </div>
-						    <div class="col-md-8">
-							    <h3 class="title">
-								    <a href="<?php the_permalink(); ?>"
-								       title="<?php the_title(); ?>"><?php the_title(); ?>
-								    </a>
-							    </h3>
-						    </div>
-						    <div class="col-md-4">
-							    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Mais palestras</a>
-						    </div>
-					    </div>
+                        <div class="box-title row">
+                            <div class="col-md-12">
+                                <h3 class="title text-center">
+                                    <a href="<?php the_permalink(); ?>"
+                                       title="<?php the_title(); ?>"><?php the_title(); ?>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Conheça a palestra</a>
+                            </div>
+                        </div>
 				    </article>
 
 			    <?php endwhile; wp_reset_postdata(); endif; ?>

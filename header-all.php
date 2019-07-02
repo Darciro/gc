@@ -78,9 +78,10 @@
         if (in_category(array('noticias', 'artigos'))) {
             $category = get_the_category();
             echo '<h2 class="container">' . $category[0]->name . '</h2>';
-        } elseif (is_page() || is_single()) {
+        } elseif (is_page() || is_single() && !in_category(array('obras')) ) {
             the_title('<h2 class="container">', '</h2>', true);
-
+        } elseif (in_category(array('obras'))) {
+            echo '<h2 class="container">Obras</h2>';
         } else {
             /*if( ! is_post_type_archive() ){
                 echo get_the_title();

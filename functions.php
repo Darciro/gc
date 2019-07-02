@@ -667,12 +667,18 @@ function load_more_works_cpt()
 	$the_query = new WP_Query($args);
 	if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-		<div class="col-md-2 lista-obras">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<img src="<?php the_post_thumbnail_url(); ?>" class="corner"/>
-			</a>
-			<strong><?php the_title(); ?></strong>
-		</div>
+        <div class="col-md-2 lista-obras">
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                <img src="<?php the_post_thumbnail_url(); ?>" class="corner">
+            </a>
+            <strong><?php the_title(); ?></strong>
+            <?php
+            $post_tags = get_the_tags();
+            if ($post_tags) {
+                echo '<span class="cat">' . $post_tags[0]->name . '</span>';
+            }
+            ?>
+        </div>
 
 		<?php $i++; endwhile; endif;
 	wp_reset_postdata();

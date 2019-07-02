@@ -42,7 +42,7 @@ get_header(); ?>
 								</h3>
 							</div>
 							<div class="col-md-4">
-								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Mais palestras</a>
+								<a href="<?php echo home_url('/palestras'); ?>" title="Mais palestras" class="leia">Mais palestras</a>
 							</div>
 						</div>
 					</article>
@@ -65,7 +65,7 @@ get_header(); ?>
 					$args = array(
 						'post_type' => 'post',
 						'posts_per_page' => 2,
-						'category_name' => 'artigos'
+						'category_name' => 'artigos-em-destaque'
 					);
 					$the_query = new WP_Query($args);
 
@@ -76,6 +76,7 @@ get_header(); ?>
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 									<img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner"/>
 								</a>
+                                <i class="fa fa-bookmark-o"></i>
 								<div class="box-title row">
 									<div class="col-md-6">
 										<a href="#" class="cat">Tech</a>
@@ -122,8 +123,7 @@ get_header(); ?>
 				<div class="obras-row row">
 					<?php $args = array('category_name' => 'obras', 'posts_per_page' => 4);
 					$the_query = new WP_Query($args);
-					if ($the_query->have_posts()) :
-						while ($the_query->have_posts()) : $the_query->the_post(); ?>
+					if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
 							<div class="col-md-3 lista-obras lista-obras-carousel">
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -137,12 +137,10 @@ get_header(); ?>
 								}
 								?>
 							</div>
-						<?php endwhile; ?>
 
-					<?php endif;
-					wp_reset_postdata(); ?>
+						<?php endwhile; endif; wp_reset_postdata(); ?>
 					<p class="text-center">
-						<a href="<?php echo home_url('?page_id=367'); ?>" id="load-more-works-cpt-2">Veja mais obras</a>
+						<a href="<?php echo home_url('/obras'); ?>" id="load-more-works-cpt-2">Veja mais obras</a>
 					</p>
 				</div>
 			</article>

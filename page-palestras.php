@@ -21,25 +21,16 @@ get_header('all');
 				            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					            <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
 				            </a>
-				            <i class="fa fa-bookmark-o"></i>
 				            <div class="box-title row">
-					            <div class="col-md-6">
-						            <?php
-						            $post_tags = get_the_tags();
-						            if ($post_tags) {
-							            echo '<a href="#" class="cat">' . $post_tags[0]->name . '</a>';
-						            }
-						            ?>
-					            </div>
-					            <div class="col-md-8">
-						            <h3 class="title">
+					            <div class="col-md-12">
+						            <h3 class="title text-center">
 							            <a href="<?php the_permalink(); ?>"
 							               title="<?php the_title(); ?>"><?php the_title(); ?>
 							            </a>
 						            </h3>
 					            </div>
-					            <div class="col-md-4">
-						            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Mais palestras</a>
+					            <div class="col-md-12 text-center">
+						            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Conheça a palestra</a>
 					            </div>
 				            </div>
 			            </article>
@@ -49,7 +40,7 @@ get_header('all');
             </div>
 
 	        <div class="col-lg-12">
-		        <p class="hat-home">Clientes</p>
+		        <p class="hat-home hat-home-internal">Clientes</p>
 	        </div>
 
 	        <div class="feature-clients-row col-lg-12">
@@ -64,17 +55,22 @@ get_header('all');
 		        if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
 			        <div class="item" data-post-id="<?php echo get_the_ID();?>">
-				        <?php
-				        $client_url = get_post_meta( get_the_ID(), '_client-url', true ) ? get_post_meta( get_the_ID(), '_client-url', true ) : false;
-				        if( $client_url ){
-					        echo '<a href="'. $client_url .'" target="_blank">';
-				        } ?>
+                        <div class="client-item">
+                            <div class="client-item-container">
+                                <?php
+                                $client_url = get_post_meta( get_the_ID(), '_client-url', true ) ? get_post_meta( get_the_ID(), '_client-url', true ) : false;
+                                $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'chalita-clients-thumb');
+                                if( $client_url ){
+                                    echo '<a href="'. $client_url .'" target="_blank">';
+                                } ?>
 
-				        <img src="<?php the_post_thumbnail_url('chalita-clients-thumb'); ?>" class="corner" title="<?php the_title(); ?>"/>
+                                <div class="client-item-thumb" style="background-image:url('<?php echo $featured_img_url; ?>')"></div>
 
-				        <?php if( $client_url ){
-					        echo '</a>';
-				        } ?>
+                                <?php if( $client_url ){
+                                    echo '</a>';
+                                } ?>
+                            </div>
+                        </div>
 			        </div>
 
 		        <?php endwhile; wp_reset_postdata(); endif; ?>

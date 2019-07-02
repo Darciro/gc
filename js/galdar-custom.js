@@ -46,7 +46,7 @@
 				items : 6,
 				navigation: true,
 				navigationText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-				responsiveClass: true,
+				responsiveClass: false,
 				center: true,
 				pagination: false,
 				responsive: true

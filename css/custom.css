@@ -1,7 +1,7 @@
 .site-header, 
 .site-header.fixed {
     padding-top: 45px;
-    position: fixed !important;
+    position: absolute !important;
 }
 
 #masthead .site-logo{
@@ -9,7 +9,7 @@
 }
 
 #masthead .social-widget {
-    margin: -50px 0 0 0;
+    margin: -58px 0 0 0;
 }
 
 #masthead .social-widget a {
@@ -150,13 +150,13 @@
     background: #fff;
     color: #373f48;
     border-radius: 50%;
-    height: 45px;
+    height: 35px;
     display: inline-block;
     text-align: center;
-    width: 45px;
-    padding: 0.1em 0.5em 0 0.3em;
+    width: 35px;
+    padding: 0;
     align-items: normal;
-    text-align: center
+    text-align: center;
 }
 
 #footer-gc .facebook i,
@@ -164,8 +164,8 @@
 #footer-gc .youtube i,
 #footer-gc .linkedin i,
 #footer-gc .instagram i{
-    font-size: 30px;
-    line-height: 45px;
+    font-size: 21px;
+    line-height: 35px;
 }
 
 #codewidget-8 {
@@ -185,6 +185,7 @@
     font-size: 48px;
     margin-bottom: 0;
     font-family: 'Avenir Next LT Pro';
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5) !important;
 }
 
 #listas {
@@ -234,7 +235,11 @@
 }
 
 .post-type-archive .bg-internas {
-    background: url(images/bg-grafismo.png) top center #657e9c;
+    background: none top center #657e9c;
+}
+
+.bg-internas {
+    background-image: none !important;
 }
 
 .podcast-widget > div{
@@ -358,6 +363,13 @@
     line-height: 20px;
 }
 
+.article-box .box-title .text-center .leia {
+    float: none;
+    clear: both;
+    text-align: center;
+    display: inline-block;
+}
+
 .article-box.news-special .box-title{
     top: 0 !important;
 }
@@ -375,10 +387,6 @@
 
 .mec-calendar .mec-calendar-events-side {
     display: none !important
-}
-
-#main.main-artigos .article-box {
-    min-height: 430px;
 }
 
 #load-more-works-cpt,
@@ -415,6 +423,10 @@
     overflow: hidden;
 }
 
+.box-img.box-img-land.box-img-land-2 {
+    max-height: 400px;
+}
+
 .box-img.box-img-land img {
     width: 100% !important;
     height: auto !important;
@@ -446,6 +458,13 @@
     color: #3e3d47;
 }
 
+.hat-home.hat-home-internal {
+    font-family: 'Avenir Next LT Pro' !important;
+    color: #3e3d47 !important;
+    font-size: 36px !important;
+    line-height: 50px !important;
+}
+
 .box-img a {
     display: block;
 }
@@ -456,6 +475,7 @@
     left: 0;
     height: 100%;
     max-width: none;
+    min-height: 400px;
 }
 
 .box-img i.fa {
@@ -638,8 +658,14 @@
     margin-bottom: 30px !important;
 }
 
+.margin-top-30 {
+    margin-top: 30px !important;
+}
+
 .feature-clients-row .item {
     text-align: center;
+    max-width: 165px;
+    margin: auto;
 }
 
 .feature-clients-row .item img{
@@ -664,10 +690,6 @@
     right: 0;
 }
 
-.content-wrapper {
-    padding: auto !important;
-}
-
 .showcase-interna {
     margin: auto !important;
     padding: auto !important;
@@ -689,6 +711,115 @@
     text-transform: none;
 }
 
-@media only screen and (max-width: 1024px) {
+.admin-bar .site-header,
+.admin-bar .site-header.float-header {
+    top: inherit !important;
+}
 
+.news-special {
+    min-height: 400px;
+    padding: 15px !important;
+}
+
+.page-template-page-artigos .news-special {
+    min-height: 430px;
+}
+
+.page-template-page-artigos .news-special.article-box .box-title {
+    min-height: 430px;
+    padding: 0 !important;
+}
+
+.page-template-page-obras .lista-obras{
+    margin: 0 0 15px 0;
+    height: auto;
+    min-height: 335px;
+}
+
+.page-template-page-obras #listas {
+    margin-top: 30px !important;
+}
+
+.client-item {
+    margin-bottom: 30px;
+}
+
+.client-item .client-item-container {
+    min-height: 165px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.client-item .client-item-container .client-item-thumb{
+    background-color: #f3f3f3;
+    height: 100%;
+    width: 100%;
+    display: block;
+    min-height: 165px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: cover;
+}
+
+.page-template-page-palestras .showcase-interna{
+    margin-top: 30px !important;
+}
+
+.content-area {
+    margin-top: 30px !important;
+}
+
+.single .page-wrap .content-wrapper {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.single .entry-header,
+.page .entry-header {
+    margin-bottom: 0 !important;
+}
+
+.video-sidebar-widget .widget_youtube_responsive{
+    padding: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.video-sidebar-widget .hat-home {
+    display: none !important;
+}
+
+.hentry .meta-post, .hentry .meta-post a {
+    margin: 0 !important;
+}
+
+.img-responsive.responsive--full{
+    max-width: none;
+    width: 100%;
+}
+
+.single-subtitle {
+    font-size: 30px;
+    line-height: 36px;
+    color: #000;
+    font-family: 'Avenir Next LT Pro' !important;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.tags-links a {
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    font-family: 'Avenir Next LT Pro' !important;
+    font-weight: 500;
+    background: none;
+    text-transform: none;
+    padding: inherit;
 }
