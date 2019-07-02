@@ -10,7 +10,6 @@ get_header('all');
 			        <div class="row">
 				        <?php
 				        $args = array(
-					        // 'post_type' => 'posts',
 					        'category_name' => 'artigos',
 					        'posts_per_page' => 2
 				        );
@@ -23,7 +22,6 @@ get_header('all');
 						        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 							        <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
 						        </a>
-						        <i class="fa fa-bookmark-o"></i>
 						        <div class="box-title row">
 							        <div class="col-md-6">
 								        <a href="#" class="cat">Tech</a>

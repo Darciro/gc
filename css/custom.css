@@ -1,6 +1,7 @@
 .site-header, 
 .site-header.fixed {
     padding-top: 45px;
+    position: fixed !important;
 }
 
 #masthead .site-logo{
@@ -25,6 +26,7 @@
 
 #mainnav {
     margin: -56px 0 0 0;
+    float: right;
 }
 
 #mainnav ul li a {
@@ -54,8 +56,6 @@
 .roll-button.customNextBtn {
     position: relative;
 }
-
-#main {}
 
 #main #sessao .hat-home{
     color: #fff;
@@ -191,11 +191,22 @@
     margin-top: 15px !important;
 }
 
-#listas .lista-obras strong{
+#listas .lista-obras strong,
+.lista-obras-carousel strong{
     display: block;
     font-size: 16px;
-    line-height: 18px;
     margin-top: 15px;
+    line-height: 22px;
+    color: #3e3d47;
+    font-family: Helvetica;
+}
+
+.lista-obras-carousel span {
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    color: #3e3d47;
+    font-family: Helvetica;
 }
 
 #page {
@@ -301,16 +312,22 @@
 }
 
 .article-box .box-title a.cat{
-    color: #657e9c;
-    text-transform: uppercase;
     font-size: 12px;
+    letter-spacing: 0px;
+    line-height: 20px;
+    color: #567faf;
     font-family: 'Avenir Next LT Pro' !important;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .article-box .box-title .reading-time{
     color: #9b9b9b;
     font-size: 12px;
+    letter-spacing: 0;
+    line-height: 20px;
+    font-family: Arial;
+    text-align: right;
 }
 
 .article-box .box-title .title{
@@ -322,6 +339,7 @@
 
 .article-box .box-title .title > a {
     font-size: 18px;
+    line-height: 20px;
 }
 
 .article-box .box-title .leia{
@@ -335,6 +353,9 @@
     float: right;
     font-family: Arial;
     margin-top: 15px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    line-height: 20px;
 }
 
 .article-box.news-special .box-title{
@@ -372,6 +393,9 @@
     padding: 2px 30px;
     margin-top: 30px;
     font-family: Arial;
+    letter-spacing: 0;
+    line-height: 20px;
+    font-weight: bold;
 }
 
 .single .topo-interna{
@@ -407,6 +431,7 @@
     font-size: 48px !important;
     font-family: 'Avenir Next LT Pro' !important;
     font-weight: 900 !important;
+    line-height: 50px;
 }
 
 .slide-inner {
@@ -417,6 +442,8 @@
     font-size: 18px !important;
     font-family: 'Avenir Next LT Pro' !important;
     font-weight: 900 !important;
+    line-height: 23px;
+    color: #3e3d47;
 }
 
 .box-img a {
@@ -505,7 +532,15 @@
     margin-right: -3px;
     position: relative;
 }
-#slide-next-prev-btns .roll-button.customNextBtn::before {
+
+.slide-next-prev-btns-holder-bg {
+    display: inline-block;
+    position: relative;
+    background: #76fcdb!important;
+    border-radius: 3px;
+}
+
+.slide-next-prev-btns-holder-bg::before {
     content: '';
     display: block;
     position: absolute;
@@ -513,7 +548,8 @@
     height: 24px;
     background: #ffffff;
     top: 6px;
-    right: 0;
+    right: 50%;
+    margin-right: -1px;
 }
 
 .bio-box {
@@ -539,6 +575,10 @@
 .bio-box .desc p {
     margin: 0;
     color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: Helvetica;
+    font-weight: 500;
 }
 
 .bio-box .desc a {
@@ -552,11 +592,14 @@
     font-family: Arial;
     margin-top: 15px;
     position: absolute;
-    width: 160px;
+    width: 170px;
     text-align: center;
     bottom: -15px;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -85px;
+    letter-spacing: 0;
+    line-height: 20px;
+    font-weight: bold;
 
 }
 
@@ -628,4 +671,24 @@
 .showcase-interna {
     margin: auto !important;
     padding: auto !important;
+}
+
+.newsletter-home .bt-1 {
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    background: #b8c671;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #fff !important;
+    padding: 0.3em 1.5em;
+    border: 0;
+    text-transform: none;
+}
+
+@media only screen and (max-width: 1024px) {
+
 }

@@ -107,8 +107,10 @@ function gerar_button()
 {
     return '<div id="slide-next-prev-btns" class="container animated fadeInUpBig text-slider botoes-slider">
 		<div class="slide-next-prev-btns-holder text-right">
-			<a href="javaScript:void(0);"  class="customNextBtn roll-button button-slider"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-			<a href="javaScript:void(0);"  class="customPrevBtn roll-button button-slider"><i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+			<div class="slide-next-prev-btns-holder-bg">
+				<a href="javaScript:void(0);"  class="customNextBtn roll-button button-slider"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+				<a href="javaScript:void(0);"  class="customPrevBtn roll-button button-slider"><i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+			</div>
 		</div>';
 }
 
