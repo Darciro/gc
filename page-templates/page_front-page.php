@@ -144,10 +144,10 @@ get_header(); ?>
 							</div>
 
 						<?php endwhile; endif; wp_reset_postdata(); ?>
-					<p class="text-center">
-						<a href="<?php echo home_url('/obras'); ?>" id="load-more-works-cpt-2">Veja mais obras</a>
-					</p>
 				</div>
+                <p class="text-center">
+                    <a href="<?php echo home_url('/obras'); ?>" id="load-more-works-cpt-2">Veja mais obras</a>
+                </p>
 			</article>
 
 			<article class="col-md-4 col-xs-12 hide-mobile">

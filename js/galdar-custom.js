@@ -72,10 +72,11 @@
 				$('.obras-mobile').owlCarousel({
 					items : 2,
 					itemsDesktop : 2,
-					itemsDesktopSmall : 2,
-					itemsTablet : 2,
-					itemsTabletSmall : 2,
+					itemsDesktopSmall : 3,
+					itemsTablet : 3,
+					itemsTabletSmall : 3,
 					pagination: true,
+					responsive: false
 				});
 			}
 
