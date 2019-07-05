@@ -39,7 +39,7 @@
         <div class="header-wrap">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 col-sm-8 col-xs-12">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
                         <?php if (get_theme_mod('site_logo')) : ?>
                             <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>"><img
                                         class="site-logo" src="<?php echo esc_url(get_theme_mod('site_logo')); ?>"
@@ -50,13 +50,25 @@
                             <h2 class="site-description"><?php bloginfo('description'); ?></h2>
                         <?php endif; ?>
                     </div>
-                    <div class="col-md-8 col-sm-4 col-xs-12">
-                        <div class="btn-menu"></div>
+                    <div class="col-md-8 col-sm-8 col-xs-8 mainnav-holder">
+                        <div class="btn-menu">
+                            <button class="close-nav">&#10005;</button>
+                        </div>
                         <nav id="mainnav" class="mainnav" role="navigation">
                             <?php wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => 'sydney_menu_fallback')); ?>
-                        </nav><!-- #site-navigation -->
+
+                            <div class="social-widget-holder-mobile">
+                                <div class="textwidget custom-html-widget social-widget">
+                                    <a href="https://www.instagram.com/gabriel_chalita/" class="instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/facechalita" class="facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://www.youtube.com/user/TVChalita" class="youtube"><i class="fa fa-youtube"></i></a>
+                                    <a href="https://twitter.com/gabriel_chalita" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    <!--<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                    <div class="col-md-2 col-sm-8 col-xs-12">
+                    <div class="col-md-2 col-sm-8 col-xs-12 social-widget-holder">
                         <div class="textwidget custom-html-widget social-widget">
                             <a href="https://www.instagram.com/gabriel_chalita/" class="instagram"><i class="fa fa-instagram"></i></a>
                             <a href="https://www.facebook.com/facechalita" class="facebook"><i class="fa fa-facebook"></i></a>

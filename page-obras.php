@@ -11,7 +11,7 @@ get_header('all');
             if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
 
-                <div class="col-md-2 lista-obras">
+                <div class="col-md-2 col-sm-3 col-xs-6 lista-obras">
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                         <img src="<?php the_post_thumbnail_url(); ?>" class="corner"/>
                     </a>

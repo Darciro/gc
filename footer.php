@@ -19,16 +19,16 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-f col-md-3 col-sm-8 col-xs-12">
+                <div class="col-f col-lg-3">
                     <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>">
                         <img class="site-logo" src="<?php echo esc_url(get_theme_mod('site_logo')); ?>" alt="<?php bloginfo('name'); ?>"/>
                     </a>
                 </div>
-                <div class="col-s col-md-6 col-sm-4 col-xs-12">
+                <div class="col-s col-lg-6">
                     <?php wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => 'sydney_menu_fallback')); ?>
                     <p class="text-center">Copyright © 2019. Todos os direitos reservados.</p>
                 </div>
-                <div class="col-t col-md-3 col-sm-8 col-xs-12">
+                <div class="col-t col-lg-3">
                     <div class="textwidget custom-html-widget">
                         <a href="https://www.instagram.com/gabriel_chalita/" class="instagram"><i class="fa fa-instagram"></i></a>
                         <a href="https://www.facebook.com/facechalita" class="facebook"><i class="fa fa-facebook"></i></a>

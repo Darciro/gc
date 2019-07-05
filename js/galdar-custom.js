@@ -40,8 +40,6 @@
 
 			});
 
-			console.log('galdar here');
-
 			$('.feature-clients-row').owlCarousel({
 				items : 6,
 				navigation: true,
@@ -50,7 +48,36 @@
 				center: true,
 				pagination: false,
 				responsive: true
-			})
+			});
+
+			if( $(window).width() < 1024 ){
+				$('.videos-mobile').owlCarousel({
+					items : 1,
+					itemsDesktop : 1,
+					itemsDesktopSmall : 1,
+					itemsTablet : 1,
+					itemsTabletSmall : 1,
+					pagination: true
+				});
+
+				$('.articles-mobile').owlCarousel({
+					items : 1,
+					itemsDesktop : 1,
+					itemsDesktopSmall : 1,
+					itemsTablet : 1,
+					itemsTabletSmall : 1,
+					pagination: true,
+				});
+
+				$('.obras-mobile').owlCarousel({
+					items : 2,
+					itemsDesktop : 2,
+					itemsDesktopSmall : 2,
+					itemsTablet : 2,
+					itemsTabletSmall : 2,
+					pagination: true,
+				});
+			}
 
 		},
 	};

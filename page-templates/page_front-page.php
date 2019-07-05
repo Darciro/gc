@@ -9,7 +9,12 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<div class="sessao-1 row">
-			<article class="noticias col-lg-8 col-xs-12">
+
+            <aside class="videos-mobile">
+                <?php if (dynamic_sidebar('videos')) : else : endif; ?>
+            </aside>
+
+			<article class="noticias col-md-8 col-xs-12">
 				<p class="hat-home">Palestras</p>
 				<?php
 				$args = array(
@@ -51,16 +56,16 @@ get_header(); ?>
 
 			</article>
 
-			<aside class="videos col-lg-4 col-xs-12">
+			<aside class="videos col-md-4 col-xs-12">
 				<?php if (dynamic_sidebar('videos')) : else : endif; ?>
 			</aside>
 		</div>
 
 		<div class="sessao-2 row">
-			<article class="col-lg-8 col-xs-12">
+			<article class="col-md-8 col-xs-12">
 				<p class="hat-home">Artigos</p>
 
-				<div class="row">
+				<div class="row articles-mobile">
 					<?php
 					$args = array(
 						'post_type' => 'post',
@@ -104,7 +109,7 @@ get_header(); ?>
 
 			</article>
 
-			<article class="col-lg-4 col-xs-12">
+			<article class="col-md-4 col-xs-12">
 				<p class="hat-home">Biografia</p>
 				<div class="bio-box corner">
 					<img src="http://gabrielchalita.com.br/novosite/wp-content/uploads/2019/06/gc.jpg">
@@ -118,9 +123,9 @@ get_header(); ?>
 		</div>
 
 		<div class="sessao-3 row">
-			<article class="col-lg-8 col-xs-12">
+			<article class="col-md-8 col-xs-12">
 				<p class="hat-home">Obras</p>
-				<div class="obras-row row">
+				<div class="obras-row row obras-mobile">
 					<?php $args = array('category_name' => 'obras', 'posts_per_page' => 4);
 					$the_query = new WP_Query($args);
 					if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -145,7 +150,7 @@ get_header(); ?>
 				</div>
 			</article>
 
-			<article class="col-lg-4 col-xs-12">
+			<article class="col-md-4 col-xs-12 hide-mobile">
 				<p class="hat-home">Instagram</p>
 
 				<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Bw-QmR-BNQD/" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">

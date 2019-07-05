@@ -16,7 +16,7 @@ get_header('all');
 
                 if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                    <div class="col-lg-2 item client-item" data-post-id="<?php echo get_the_ID();?>">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 item client-item" data-post-id="<?php echo get_the_ID();?>">
                         <div class="client-item-container">
                             <?php
                             $client_url = get_post_meta( get_the_ID(), '_client-url', true ) ? get_post_meta( get_the_ID(), '_client-url', true ) : false;
