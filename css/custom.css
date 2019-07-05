@@ -1069,6 +1069,15 @@
     .box-img img {
         min-height: auto;
     }
+
+    #footer-gc {
+        padding-top: 7em !important;
+        margin-top: -60px;
+    }
+
+    .bg-internas {
+        min-height: 15%;
+    }
 }
 
 @media (max-width: 767px){
@@ -1100,10 +1109,44 @@
         padding: 0;
         margin-top: 30px;
     }
+
+    .article-box .box-title {
+        padding: 5px 0;
+        margin: 4px;
+    }
+
+    #masthead .site-logo {
+        height: 108px;
+        width: 112px;
+        margin-left: 10px;
+    }
+
+    .single .content-area {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .bg-internas {
+        min-height: 12%;
+    }
 }
 
 @media (max-width: 620px){
     .topo-interna h2 {
-        padding-top: 60px;
+        padding-top: 60px !important;
+    }
+
+    .page-template-page-obras .lista-obras {
+        min-height: 300px;
+    }
+
+    .bg-internas {
+        min-height: 10%;
+    }
+}
+
+@media (max-width: 480px){
+    .topo-interna h2 {
+        padding-top: 100px !important;
     }
 }
