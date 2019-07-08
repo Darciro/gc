@@ -17,9 +17,9 @@ get_header('all');
 		            if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
 		                <div class="col-lg-6 margin-bottom-30">
-			                <article class="article-box box-img box-img-land corner">
+			                <article class="article-box box-img corner">
 				            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					            <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
+					            <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb-2'); ?>" class="corner width-100"/>
 				            </a>
 				            <div class="box-title row">
 					            <div class="col-md-12">

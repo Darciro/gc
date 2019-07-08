@@ -52,8 +52,10 @@ if (!function_exists('sydney_setup')) :
 		add_image_size('chalita-livro-thumb', 285, 185, true);
 		add_image_size('chalita-noticia-thumb', 405, 490, true);
 		add_image_size('chalita-artigo-thumb', 400, 430, true);
+		add_image_size('chalita-artigo-thumb-2', 360, 400, true);
 		add_image_size('chalita-mas-thumb', 480);
 		add_image_size('chalita-palestras-thumb', 750, 430, true);
+		add_image_size('chalita-palestras-thumb-2', 550, 400, true);
 		add_image_size('chalita-clients-thumb', 165, 165, true);
 
 		// This theme uses wp_nav_menu() in one location.

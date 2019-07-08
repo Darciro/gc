@@ -39,15 +39,13 @@ get_header(); ?>
 								}
 								?>
 							</div>
-							<div class="col-md-8 no-padding-left">
+							<div class="col-md-12 no-padding-left article-box-heading">
 								<h3 class="title">
 									<a href="<?php the_permalink(); ?>"
 									   title="<?php the_title(); ?>"><?php the_title(); ?>
 									</a>
 								</h3>
-							</div>
-							<div class="col-md-4 no-padding-right">
-								<a href="<?php echo home_url('/palestras'); ?>" title="Mais palestras" class="leia">Mais palestras</a>
+                                <a href="<?php echo home_url('/palestras'); ?>" title="Mais palestras" class="leia">Mais Palestras</a>
 							</div>
 						</div>
 					</article>
@@ -79,22 +77,20 @@ get_header(); ?>
 						<div class="col-md-6">
 							<article class="article-box box-img corner">
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-									<img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner"/>
+									<img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-2'); ?>" class="corner"/>
 								</a>
                                 <i class="fa fa-bookmark-o"></i>
 								<div class="box-title row">
 									<div class="col-md-6 no-padding">
 										<a href="#" class="cat">Tech</a>
 									</div>
-									<div class="col-md-12 no-padding">
+                                    <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
 										<h3 class="title">
 											<a href="<?php the_permalink(); ?>"
 											   title="<?php the_title(); ?>"><?php the_title(); ?>
 											</a>
 										</h3>
-									</div>
-									<div class="col-md-12 no-padding">
-										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
 									</div>
 								</div>
 							</article>

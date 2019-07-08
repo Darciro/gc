@@ -19,7 +19,7 @@ get_header('all');
                         if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                             <div class="col-md-6">
-                                <article class="article-box box-img corner">
+                                <article class="article-box box-img box-img--taller corner">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                         <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>"
                                              class="corner"/>
@@ -32,16 +32,13 @@ get_header('all');
                                         <div class="col-md-6 text-right no-padding">
                                             <!--<span class="reading-time">6 min de leitura</span>-->
                                         </div>
-                                        <div class="col-md-12 no-padding">
+                                        <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
                                             <h3 class="title">
                                                 <a href="<?php the_permalink(); ?>"
                                                    title="<?php the_title(); ?>"><?php the_title(); ?>
                                                 </a>
                                             </h3>
-                                        </div>
-                                        <div class="col-md-12 no-padding">
-                                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
-                                               class="leia">Leia</a>
+                                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
                                         </div>
                                     </div>
                                 </article>
@@ -83,13 +80,11 @@ get_header('all');
                                     <div class="col-md-6 text-right no-padding">
                                         <!--<span class="reading-time">6 min de leitura</span>-->
                                     </div>
-                                    <div class="col-md-8 no-padding-left">
+                                    <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
                                         <h3 class="title">
                                             <a href="<?php the_permalink(); ?>"
                                                title="<?php the_title(); ?>"><?php the_title(); ?></a>
                                         </h3>
-                                    </div>
-                                    <div class="col-md-4 no-padding-right">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
                                     </div>
                                 </div>
@@ -114,16 +109,13 @@ get_header('all');
                                 <div class="col-md-6 text-right">
                                     <!--<span class="reading-time">6 min de leitura</span>-->
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12 article-box-heading article-box-heading--news-special">
                                     <h3 class="title">
                                         <a href="<?php the_permalink(); ?>"
                                            title="<?php the_title(); ?>"><?php the_title(); ?></a>
                                     </h3>
                                     <?php the_excerpt(); ?>
-                                </div>
-                                <div class="col-md-12">
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
-                                       class="leia">Leia</a>
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
                                 </div>
                             </div>
                         </article>
@@ -159,16 +151,13 @@ get_header('all');
                                 <div class="col-md-6 text-right no-padding">
                                     <!--<span class="reading-time">6 min de leitura</span>-->
                                 </div>
-                                <div class="col-md-12 no-padding">
+                                <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
                                     <h3 class="title">
                                         <a href="<?php the_permalink(); ?>"
                                            title="<?php the_title(); ?>"><?php the_title(); ?>
                                         </a>
                                     </h3>
-                                </div>
-                                <div class="col-md-12 no-padding">
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
-                                       class="leia">Leia</a>
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
                                 </div>
                             </div>
                         </article>
@@ -194,15 +183,12 @@ get_header('all');
                                 <div class="col-md-6 text-right no-padding">
                                     <!--<span class="reading-time">6 min de leitura</span>-->
                                 </div>
-                                <div class="col-md-8 no-padding-left">
+                                <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
                                     <h3 class="title">
                                         <a href="<?php the_permalink(); ?>"
                                            title="<?php the_title(); ?>"><?php the_title(); ?></a>
                                     </h3>
-                                </div>
-                                <div class="col-md-4 no-padding-right">
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
-                                       class="leia">Leia</a>
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
                                 </div>
                             </div>
                         </article>
