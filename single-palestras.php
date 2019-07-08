@@ -24,7 +24,7 @@ get_header('all'); ?>
         <div class="col-md-8">
             <?php while (have_posts()) : the_post(); ?>
 
-                <?php get_template_part('content', 'single'); ?>
+                <?php get_template_part('content', 'single-palestras'); ?>
 
             <?php endwhile; // end of the loop. ?>
         </div>

@@ -26,20 +26,20 @@ get_header('all');
                                     </a>
                                     <i class="fa fa-bookmark-o"></i>
                                     <div class="box-title row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 no-padding">
                                             <a href="#" class="cat">Tech</a>
                                         </div>
-                                        <div class="col-md-6 text-right">
-                                            <span class="reading-time">6 min de leitura</span>
+                                        <div class="col-md-6 text-right no-padding">
+                                            <!--<span class="reading-time">6 min de leitura</span>-->
                                         </div>
-                                        <div class="col-md-9">
+                                        <div class="col-md-12 no-padding">
                                             <h3 class="title">
                                                 <a href="<?php the_permalink(); ?>"
                                                    title="<?php the_title(); ?>"><?php the_title(); ?>
                                                 </a>
                                             </h3>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-12 no-padding">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
                                                class="leia">Leia</a>
                                         </div>
@@ -77,19 +77,19 @@ get_header('all');
                                 </a>
                                 <i class="fa fa-bookmark-o"></i>
                                 <div class="box-title row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 no-padding">
                                         <a href="#" class="cat">Tech</a>
                                     </div>
-                                    <div class="col-md-6 text-right">
-                                        <span class="reading-time">6 min de leitura</span>
+                                    <div class="col-md-6 text-right no-padding">
+                                        <!--<span class="reading-time">6 min de leitura</span>-->
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 no-padding-left">
                                         <h3 class="title">
                                             <a href="<?php the_permalink(); ?>"
                                                title="<?php the_title(); ?>"><?php the_title(); ?></a>
                                         </h3>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 no-padding-right">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@ get_header('all');
                                     <a href="#" class="cat">Tech</a>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <span class="reading-time">6 min de leitura</span>
+                                    <!--<span class="reading-time">6 min de leitura</span>-->
                                 </div>
                                 <div class="col-md-12">
                                     <h3 class="title">
@@ -153,20 +153,20 @@ get_header('all');
                             </a>
                             <i class="fa fa-bookmark-o"></i>
                             <div class="box-title row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 no-padding">
                                     <a href="#" class="cat">Tech</a>
                                 </div>
-                                <div class="col-md-6 text-right">
-                                    <span class="reading-time">6 min de leitura</span>
+                                <div class="col-md-6 text-right no-padding">
+                                    <!--<span class="reading-time">6 min de leitura</span>-->
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-12 no-padding">
                                     <h3 class="title">
                                         <a href="<?php the_permalink(); ?>"
                                            title="<?php the_title(); ?>"><?php the_title(); ?>
                                         </a>
                                     </h3>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-12 no-padding">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
                                        class="leia">Leia</a>
                                 </div>
@@ -188,19 +188,19 @@ get_header('all');
                             </a>
                             <i class="fa fa-bookmark-o"></i>
                             <div class="box-title row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 no-padding">
                                     <a href="#" class="cat">Tech</a>
                                 </div>
-                                <div class="col-md-6 text-right">
-                                    <span class="reading-time">6 min de leitura</span>
+                                <div class="col-md-6 text-right no-padding">
+                                    <!--<span class="reading-time">6 min de leitura</span>-->
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-8 no-padding-left">
                                     <h3 class="title">
                                         <a href="<?php the_permalink(); ?>"
                                            title="<?php the_title(); ?>"><?php the_title(); ?></a>
                                     </h3>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 no-padding-right">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
                                        class="leia">Leia</a>
                                 </div>

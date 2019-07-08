@@ -33,6 +33,14 @@ get_header('all'); ?>
 
             <?php endwhile;
 
+        elseif( $obras_cat == 'artigos' ) :
+
+            while (have_posts()) : the_post(); ?>
+
+                <?php get_template_part('content', 'single-artigos'); ?>
+
+            <?php endwhile;
+
         else: ?>
 
             <div class="col-md-8">

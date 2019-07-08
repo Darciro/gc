@@ -31,7 +31,7 @@ get_header(); ?>
 							<img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
 						</a>
 						<div class="box-title row">
-							<div class="col-md-6">
+							<div class="col-md-12 no-padding">
 								<?php
 								$post_tags = get_the_tags();
 								if ($post_tags) {
@@ -39,14 +39,14 @@ get_header(); ?>
 								}
 								?>
 							</div>
-							<div class="col-md-8">
+							<div class="col-md-8 no-padding-left">
 								<h3 class="title">
 									<a href="<?php the_permalink(); ?>"
 									   title="<?php the_title(); ?>"><?php the_title(); ?>
 									</a>
 								</h3>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-4 no-padding-right">
 								<a href="<?php echo home_url('/palestras'); ?>" title="Mais palestras" class="leia">Mais palestras</a>
 							</div>
 						</div>
@@ -83,20 +83,20 @@ get_header(); ?>
 								</a>
                                 <i class="fa fa-bookmark-o"></i>
 								<div class="box-title row">
-									<div class="col-md-6">
+									<div class="col-md-6 no-padding">
 										<a href="#" class="cat">Tech</a>
 									</div>
-									<div class="col-md-6 text-right">
-										<span class="reading-time">6 min de leitura</span>
+									<div class="col-md-6 text-right no-padding">
+										<!--<span class="reading-time">6 min de leitura</span>-->
 									</div>
-									<div class="col-md-9">
+									<div class="col-md-12 no-padding">
 										<h3 class="title">
 											<a href="<?php the_permalink(); ?>"
 											   title="<?php the_title(); ?>"><?php the_title(); ?>
 											</a>
 										</h3>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-12 no-padding">
 										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
 									</div>
 								</div>
@@ -116,7 +116,7 @@ get_header(); ?>
 					<div class="desc">
 						<p>2017</p>
 						<p>Gabriel Chalita vai presidir a Academia Paulista de Letras</p>
-						<a href="#">Conheça a Biografia</a>
+						<a href="<?php echo home_url('/biografia'); ?>">Conheça a Biografia</a>
 					</div>
 				</div>
 			</article>
@@ -135,12 +135,7 @@ get_header(); ?>
 									<img src="<?php the_post_thumbnail_url(); ?>" class="corner"/>
 								</a>
 								<strong><?php the_title(); ?></strong>
-								<?php
-								$post_tags = get_the_tags();
-								if ($post_tags) {
-									echo '<span class="cat">' . $post_tags[0]->name . '</span>';
-								}
-								?>
+                                <span class="cat">Gabriel Chalita</span>
 							</div>
 
 						<?php endwhile; endif; wp_reset_postdata(); ?>

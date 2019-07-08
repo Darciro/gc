@@ -95,12 +95,12 @@
     overflow: hidden;
     margin-top: 0;
     z-index: 0;
-    padding-top: 10em !important;
+    padding-top: 4em !important;
 }
 
 #footer-gc .col-f .site-logo {
-    max-height: 115px;
-    margin-top: -85px;
+    max-height: 90px;
+    margin-top: -73px;
 }
 
 #footer-gc .col-s ul {
@@ -119,9 +119,9 @@
 #footer-gc .col-s ul li a {
     display: block;
     color: #fff;
-    padding: 0 7px;
+    padding: 0 12px;
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Prompt", sans-serif !important;
     font-weight: 600 !important;
     text-decoration: none;
@@ -131,6 +131,10 @@
 #footer-gc .col-s p {
     color: #fff;
     margin: 30px 0;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 20px;
+    font-family: 'Avenir Next LT Pro';
 }
 
 #footer-gc .col-t {
@@ -142,7 +146,7 @@
 }
 
 #footer-gc .col-t .custom-html-widget {
-    margin-top: -25px;
+    margin-top: -14px;
 }
 
 #footer-gc .facebook,
@@ -180,11 +184,11 @@
 }
 
 .bg-internas {
-    height: 400px !important;
+    height: 365px !important;
 }
 
 .topo-interna h2 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 48px;
     margin-bottom: 0;
     font-family: 'Avenir Next LT Pro';
@@ -207,7 +211,7 @@
 
 .lista-obras-carousel span {
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 22px;
     color: #3e3d47;
     font-family: Helvetica;
@@ -325,7 +329,7 @@
     line-height: 20px;
     color: #567faf;
     font-family: 'Avenir Next LT Pro' !important;
-    font-weight: 500;
+    font-weight: 300;
     text-transform: uppercase;
 }
 
@@ -360,7 +364,7 @@
     padding: 2px 15px;
     float: right;
     font-family: Arial;
-    margin-top: 15px;
+    margin-top: 0;
     font-weight: bold;
     letter-spacing: 0px;
     line-height: 20px;
@@ -730,13 +734,18 @@
 
 .page-template-page-artigos .news-special.article-box .box-title {
     min-height: 430px;
-    padding: 0 !important;
+    padding: 7px 0 !important;
 }
 
 .page-template-page-obras .lista-obras {
     margin: 0 0 15px 0;
     height: auto;
-    min-height: 335px;
+    min-height: 410px;
+}
+
+.page-template-page-obras .lista-obras img {
+    width: 100%;
+    height: auto;
 }
 
 .page-template-page-obras #listas {
@@ -851,6 +860,58 @@
 
 .btn-menu {
     line-height: 28px;
+}
+
+.category-artigos .tags-links a{
+    letter-spacing: 0;
+    line-height: 20px;
+    color: #567faf;
+    font-family: 'Avenir Next LT Pro' !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.more-articles {
+    margin-top: 30px;
+}
+
+.more-articles h4 {
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    font-family: 'Avenir Next LT Pro' !important;
+    text-transform: uppercase;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-padding-left {
+    padding-left: 0 !important;
+}
+
+.no-padding-right {
+    padding-right: 0 !important;
+}
+
+.page-wrap {
+    padding-bottom: 50px !important;
+}
+
+.newsletter-home p {
+    font-size: 15px;
+    line-height: 23px;
+    color: #fff;
+    font-family: 'Avenir Next LT Pro' !important;
+}
+
+.newsletter-home p strong{
+    font-size: 18px;
+    line-height: 23px;
+    font-family: 'Avenir Next LT Pro' !important;
 }
 
 @media (max-width: 1024px) {
@@ -1149,4 +1210,8 @@
     .topo-interna h2 {
         padding-top: 100px !important;
     }
+}
+
+@media (min-width: 1200px){
+
 }

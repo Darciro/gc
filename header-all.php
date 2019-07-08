@@ -74,7 +74,7 @@
                             <a href="https://www.facebook.com/facechalita" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="https://www.youtube.com/user/TVChalita" class="youtube"><i class="fa fa-youtube"></i></a>
                             <a href="https://twitter.com/gabriel_chalita" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <!--<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
+                            <a href="https://www.linkedin.com/in/gabriel-chalita/" class="linkedin"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -90,6 +90,8 @@
         if (in_category(array('noticias', 'artigos'))) {
             $category = get_the_category();
             echo '<h2 class="container">' . $category[0]->name . '</h2>';
+        }elseif ( is_singular( 'palestras' ) ) {
+            echo '<h2 class="container">Palestras</h2>';
         } elseif (is_page() || is_single() && !in_category(array('obras')) ) {
             the_title('<h2 class="container">', '</h2>', true);
         } elseif (in_category(array('obras'))) {

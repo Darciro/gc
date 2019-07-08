@@ -663,21 +663,22 @@ function load_more_works_cpt()
 
 	ob_start();
 	$i = 0;
-	$args = array('category_name' => 'obras', 'posts_per_page' => 12, 'offset' => $_POST['index_offset']);
+    $args = array(
+        'offset' => $_POST['index_offset'],
+        'category_name' => 'obras',
+        'posts_per_page' => 12,
+        'order' => 'ASC',
+        'orderby' => 'title',
+    );
 	$the_query = new WP_Query($args);
 	if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-        <div class="col-md-2 lista-obras">
+        <div class="col-md-2 col-sm-3 col-xs-6 lista-obras">
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                 <img src="<?php the_post_thumbnail_url(); ?>" class="corner">
             </a>
             <strong><?php the_title(); ?></strong>
-            <?php
-            $post_tags = get_the_tags();
-            if ($post_tags) {
-                echo '<span class="cat">' . $post_tags[0]->name . '</span>';
-            }
-            ?>
+            <span class="cat">Gabriel Chalita</span>
         </div>
 
 		<?php $i++; endwhile; endif;
