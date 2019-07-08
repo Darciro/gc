@@ -21,8 +21,8 @@ get_header('all');
                             <div class="col-md-6">
                                 <article class="article-box box-img box-img--taller corner">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>"
-                                             class="corner"/>
+                                        <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner hidden-xs"/>
+                                        <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
                                     </a>
                                     <i class="fa fa-bookmark-o"></i>
                                     <div class="box-title row">
@@ -69,8 +69,8 @@ get_header('all');
 
                             <article class="article-box box-img box-img-land corner">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>"
-                                         class="corner"/>
+                                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner hidden-xs"/>
+                                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
                                 </a>
                                 <i class="fa fa-bookmark-o"></i>
                                 <div class="box-title row">
@@ -141,7 +141,8 @@ get_header('all');
 
                         <article class="article-box box-img corner">
                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner"/>
+                                <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner hidden-xs"/>
+                                <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
                             </a>
                             <i class="fa fa-bookmark-o"></i>
                             <div class="box-title row">
@@ -173,7 +174,8 @@ get_header('all');
 
                         <article class="article-box box-img box-img-land box-img-land-2 corner">
                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
+                                <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner hidden-xs"/>
+                                <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
                             </a>
                             <i class="fa fa-bookmark-o"></i>
                             <div class="box-title row">

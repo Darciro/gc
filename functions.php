@@ -53,6 +53,7 @@ if (!function_exists('sydney_setup')) :
 		add_image_size('chalita-noticia-thumb', 405, 490, true);
 		add_image_size('chalita-artigo-thumb', 400, 430, true);
 		add_image_size('chalita-artigo-thumb-2', 360, 400, true);
+		add_image_size('chalita-artigo-thumb-mobile', 320, 380, true);
 		add_image_size('chalita-mas-thumb', 480);
 		add_image_size('chalita-palestras-thumb', 750, 430, true);
 		add_image_size('chalita-palestras-thumb-2', 550, 400, true);
@@ -343,7 +344,7 @@ function sydney_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_style('sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), '080720191752');
+	wp_enqueue_style('sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), '080720191935');
 
 	wp_enqueue_script('galdar-custom-js', get_template_directory_uri() . '/js/galdar-custom.js', array('jquery'), false, true);
 	wp_localize_script('galdar-custom-js', 'gs', array(

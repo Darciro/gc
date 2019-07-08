@@ -28,7 +28,8 @@ get_header(); ?>
 
 					<article class="article-box box-img box-img-land corner">
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner"/>
+							<img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner hidden-xs"/>
+							<img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
 						</a>
 						<div class="box-title row">
 							<div class="col-md-12 no-padding">
@@ -77,7 +78,8 @@ get_header(); ?>
 						<div class="col-md-6">
 							<article class="article-box box-img corner">
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-									<img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-2'); ?>" class="corner"/>
+                                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-2'); ?>" class="corner hidden-xs"/>
+                                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
 								</a>
                                 <i class="fa fa-bookmark-o"></i>
 								<div class="box-title row">

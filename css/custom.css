@@ -804,7 +804,9 @@ img.width-100 {
     position: absolute;
     left: 0;
     top: 0;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .page-template-page-palestras .showcase-interna {
@@ -994,6 +996,14 @@ img.width-100 {
 
 .page-template-page-artigos .bg-internas {
     background: url(images/bg-grafismo.png) top center #012633;
+}
+
+.hidden-xs {
+    display: block;
+}
+
+.visible-xs {
+    display: none;
 }
 
 @media (max-width: 1024px) {
@@ -1325,6 +1335,31 @@ img.width-100 {
     .bg-internas {
         height: 270px !important;
         min-height: auto;
+    }
+
+    .hidden-xs {
+        display: none;
+    }
+
+    .visible-xs {
+        display: block;
+    }
+
+    .article-box-heading {
+        padding-right: 75px !important;
+        padding-bottom: 37px !important;
+    }
+
+    .article-box .box-title .leia {
+        margin-right: 10px;
+    }
+
+    #artigos-1 .article-box .box-title .leia {
+        margin: 10px !important;
+    }
+
+    .article-box-heading.article-box-heading--news-special .leia {
+        bottom: 46px !important;
     }
 }
 
