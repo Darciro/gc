@@ -119,7 +119,7 @@
 #footer-gc .col-s ul li a {
     display: block;
     color: #fff;
-    padding: 0 12px;
+    padding: 0 10px;
     position: relative;
     font-size: 14px;
     font-family: "Prompt", sans-serif !important;
@@ -801,6 +801,10 @@
     padding: 0 !important;
     width: 100% !important;
     margin: 0 !important;
+}
+
+.single .widget_youtube_responsive {
+    margin-bottom: 15px !important;
 }
 
 .video-sidebar-widget .hat-home {
