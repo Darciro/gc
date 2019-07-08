@@ -70,7 +70,7 @@ if (!function_exists('sydney_slider_template')) :
             }
             ?>
             <div id="slideshow" class="header-slider" data-speed="<?php echo esc_attr($speed); ?>"
-                 data-mobileslider="<?php echo esc_attr($mobile_slider); ?>">
+                 data-mobileslider="<?php echo esc_attr($mobile_slider); ?>" style="background-image: url(<?php echo esc_url($images['slider_image_1']); ?>);">
                 <div class="slides-container">
 
                     <?php $c = 1; ?>

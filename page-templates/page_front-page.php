@@ -86,9 +86,6 @@ get_header(); ?>
 									<div class="col-md-6 no-padding">
 										<a href="#" class="cat">Tech</a>
 									</div>
-									<div class="col-md-6 text-right no-padding">
-										<!--<span class="reading-time">6 min de leitura</span>-->
-									</div>
 									<div class="col-md-12 no-padding">
 										<h3 class="title">
 											<a href="<?php the_permalink(); ?>"

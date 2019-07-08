@@ -63,7 +63,7 @@
                                     <a href="https://www.facebook.com/facechalita" class="facebook"><i class="fa fa-facebook"></i></a>
                                     <a href="https://www.youtube.com/user/TVChalita" class="youtube"><i class="fa fa-youtube"></i></a>
                                     <a href="https://twitter.com/gabriel_chalita" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <!--<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
+                                    <a href="https://www.linkedin.com/in/gabriel-chalita/" class="linkedin"><i class="fa fa-linkedin"></i></a>
                                 </div>
                             </div>
                         </nav>
