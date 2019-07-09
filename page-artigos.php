@@ -5,8 +5,8 @@ get_header('all');
     <div id="primary" class="fp-content-area">
         <main id="main" class="site-main main-artigos" role="main">
 
-            <div id="artigos-1" class="col-lg-12">
-                <article class="noticias col-lg-8 col-xs-12">
+            <div id="artigos-1" class="col-lg-12 clearfix">
+                <article class="noticias col-lg-8 col-md-8 col-xs-12">
                     <div class="row">
                         <?php
                         $args = array(
@@ -47,7 +47,7 @@ get_header('all');
 
                 </article>
 
-                <aside class="videos videos-no-pd col-lg-4 col-xs-12">
+                <aside class="videos videos-no-pd col-lg-4 col-md-4 col-xs-12">
                     <?php if (dynamic_sidebar('videos')) : else : endif; ?>
                 </aside>
             </div>
