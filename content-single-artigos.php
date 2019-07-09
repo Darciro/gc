@@ -79,7 +79,8 @@
             <div class="col-md-4">
                 <article class="article-box box-img corner">
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner"/>
+                        <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-2'); ?>" class="corner hidden-xs"/>
+                        <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
                     </a>
                     <div class="box-title row">
                         <div class="col-md-6 no-padding">
