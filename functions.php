@@ -344,9 +344,9 @@ function sydney_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_style('sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), '080720191935');
+	wp_enqueue_style('sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), '080720192107');
 
-	wp_enqueue_script('galdar-custom-js', get_template_directory_uri() . '/js/galdar-custom.js', array('jquery'), false, true);
+	wp_enqueue_script('galdar-custom-js', get_template_directory_uri() . '/js/galdar-custom.js', array('jquery'), '080720192107', true);
 	wp_localize_script('galdar-custom-js', 'gs', array(
 			'ajaxurl' => admin_url('admin-ajax.php')
 		)
@@ -962,3 +962,72 @@ function your_columns_head_palestras($defaults)
 	return $new;
 }
 
+/**
+ * Limit Excerpt Length by number of Words
+ *
+ */
+function get_chalita_excerpt( $limit = 30 ) {
+    $excerpt = explode(' ', get_the_excerpt(), $limit);
+    if (count($excerpt)>=$limit) {
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt).'...';
+    } else {
+        $excerpt = implode(" ",$excerpt);
+    }
+    $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+
+    return $excerpt;
+}
+
+/**
+ * Adds a ajax call to load more articles
+ *
+ */
+add_action('wp_ajax_load_more_articles', 'load_more_articles');
+add_action('wp_ajax_nopriv_load_more_articles', 'load_more_articles');
+function load_more_articles()
+{
+
+    ob_start();
+    $i = 0;
+    $args = array(
+        'offset' => $_POST['index_offset'],
+        'category_name' => 'artigos',
+        'posts_per_page' => 6,
+        'category__not_in' => array(863)
+    );
+    $the_query = new WP_Query($args);
+    if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+        <div class="col-lg-4 col-md-6 margin-bottom-30">
+            <article class="article-box box-img corner <?php echo has_post_thumbnail() ? '' : 'news-special'; ?>">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner hidden-xs"/>
+                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
+                </a>
+                <div class="box-title row">
+                    <div class="col-md-12 no-padding">
+                        <a href="#" class="cat">Tech</a>
+                    </div>
+                    <div class="col-md-12 no-padding-left <?php echo has_post_thumbnail() ? 'article-box-heading article-box-heading--less-padding' : 'article-box-heading article-box-heading--news-special'; ?> ">
+                        <h3 class="title">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                        </h3>
+                        <?php if( !has_post_thumbnail() ){
+                            echo get_chalita_excerpt(35);
+                        } ?>
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <?php $i++; endwhile; endif;
+    wp_reset_postdata();
+
+    $data['posts'] = ob_get_clean();
+    $data['offset'] = $i;
+    $data['ended'] = $_POST['index_offset'] >= $the_query->found_posts;
+
+    wp_send_json_success($data);
+}

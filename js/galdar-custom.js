@@ -80,6 +80,40 @@
 				});
 			}
 
+			$("#load-more-articles-btn").on('click', function (e) {
+				e.preventDefault();
+
+				var indexOffset = $('.articles-area').attr('data-index');
+
+				$.ajax({
+					url: gs.ajaxurl,
+					data: {
+						action: 'load_more_articles',
+						index_offset: indexOffset,
+					},
+					type: 'POST',
+					beforeSend: function () {
+						$("#load-more-articles-btn").text('Carregando');
+					},
+					success: function (res) {
+						// console.log( res );
+						$('.articles-area').append(res.data.posts);
+						$('.articles-area').attr('data-index', parseInt(indexOffset) + res.data.offset);
+
+						if (res.data.ended) {
+							$("#load-more-articles-btn").hide();
+						}
+
+						$("#load-more-articles-btn").text('Carregar mais');
+					},
+					error: function (jqXHR, textStatus, errorThrown) {
+						console.error(jqXHR, textStatus, errorThrown);
+						// $('#support-form .alert-success').removeClass('d-none').text(errorThrown);
+					}
+				});
+
+			});
+
 		},
 	};
 })(jQuery);

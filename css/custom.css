@@ -415,7 +415,8 @@
 }
 
 #load-more-works-cpt,
-#load-more-works-cpt-2 {
+#load-more-works-cpt-2,
+#load-more-articles-btn {
     font-size: 14px;
     color: #fff;
     display: inline-block;
@@ -758,10 +759,6 @@ img.width-100 {
     padding: 15px !important;
 }
 
-.page-template-page-artigos .news-special {
-    min-height: 430px;
-}
-
 .page-template-page-artigos .news-special.article-box .box-title {
     min-height: 430px;
     padding: 7px 0 !important;
@@ -971,7 +968,12 @@ img.width-100 {
     padding-left: 15px !important;
     padding-right: 15px !important;
     height: 100%;
-    padding-bottom: 80px;
+    padding-bottom: 130px;
+}
+
+.article-box-heading.article-box-heading--news-special p{
+    max-height: 190px;
+    overflow: hidden;
 }
 
 .article-box-heading .leia{
@@ -981,7 +983,7 @@ img.width-100 {
 }
 
 .article-box-heading.article-box-heading--news-special .leia{
-    bottom: 36px;
+    bottom: 86px;
     right: 0;
     margin: 12px 3px;
 }

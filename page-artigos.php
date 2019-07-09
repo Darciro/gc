@@ -26,11 +26,8 @@ get_header('all');
                                     </a>
                                     <i class="fa fa-bookmark-o"></i>
                                     <div class="box-title row">
-                                        <div class="col-md-6 no-padding">
+                                        <div class="col-md-12 no-padding">
                                             <a href="#" class="cat">Tech</a>
-                                        </div>
-                                        <div class="col-md-6 text-right no-padding">
-                                            <!--<span class="reading-time">6 min de leitura</span>-->
                                         </div>
                                         <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
                                             <h3 class="title">
@@ -56,148 +53,47 @@ get_header('all');
             </div>
 
             <div id="artigos-2" class="lista-2 col-lg-12">
-                <div class="col-md-8">
+                <div class="articles-area" data-index="12">
                     <?php
                     $args = array(
                         'category_name' => 'artigos',
-                        'posts_per_page' => 1,
+                        'posts_per_page' => 6,
                         'category__not_in' => array(863)
                     );
                     $the_query = new WP_Query($args);
                     if ($the_query->have_posts()) :
                         while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                            <article class="article-box box-img box-img-land corner">
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner hidden-xs"/>
-                                    <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
-                                </a>
-                                <i class="fa fa-bookmark-o"></i>
-                                <div class="box-title row">
-                                    <div class="col-md-6 no-padding">
-                                        <a href="#" class="cat">Tech</a>
+                            <div class="col-lg-4 col-md-6 margin-bottom-30">
+                                <article class="article-box box-img corner <?php echo has_post_thumbnail() ? '' : 'news-special'; ?>">
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                        <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner hidden-xs"/>
+                                        <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
+                                    </a>
+                                    <div class="box-title row">
+                                        <div class="col-md-12 no-padding">
+                                            <a href="#" class="cat">Tech</a>
+                                        </div>
+                                        <div class="col-md-12 no-padding-left <?php echo has_post_thumbnail() ? 'article-box-heading article-box-heading--less-padding' : 'article-box-heading article-box-heading--news-special'; ?> ">
+                                            <h3 class="title">
+                                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                                            </h3>
+                                            <?php if( !has_post_thumbnail() ){
+                                                echo get_chalita_excerpt(35);
+                                            } ?>
+                                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 text-right no-padding">
-                                        <!--<span class="reading-time">6 min de leitura</span>-->
-                                    </div>
-                                    <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
-                                        <h3 class="title">
-                                            <a href="<?php the_permalink(); ?>"
-                                               title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                                        </h3>
-                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
 
                         <?php endwhile; endif;
                     wp_reset_postdata(); ?>
                 </div>
 
-                <aside class="col-md-4">
-                    <?php $args = array('category_name' => 'artigos', 'posts_per_page' => 1,);
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()) :
-                    while ($the_query->have_posts()) : $the_query->the_post(); ?>
-
-                        <article class="article-box box-img corner news-special">
-                            <i class="fa fa-bookmark-o"></i>
-                            <div class="box-title row">
-                                <div class="col-md-6">
-                                    <a href="#" class="cat">Tech</a>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <!--<span class="reading-time">6 min de leitura</span>-->
-                                </div>
-                                <div class="col-md-12 article-box-heading article-box-heading--news-special">
-                                    <h3 class="title">
-                                        <a href="<?php the_permalink(); ?>"
-                                           title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                                    </h3>
-                                    <?php the_excerpt(); ?>
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
-                                </div>
-                            </div>
-                        </article>
-
-                    <?php endwhile; ?>
-                </aside>
-                <?php endif;
-                wp_reset_postdata(); ?>
-
-            </div>
-
-            <div id="artigos-3" class="lista-2 col-lg-12">
-
-                <aside class="col-md-4">
-
-                    <?php $args = array('category_name' => 'artigos', 'posts_per_page' => 1,);
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()) :
-                    ?>
-
-                    <?php
-                    while ($the_query->have_posts()) : $the_query->the_post(); ?>
-
-                        <article class="article-box box-img corner">
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb'); ?>" class="corner hidden-xs"/>
-                                <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
-                            </a>
-                            <i class="fa fa-bookmark-o"></i>
-                            <div class="box-title row">
-                                <div class="col-md-6 no-padding">
-                                    <a href="#" class="cat">Tech</a>
-                                </div>
-                                <div class="col-md-6 text-right no-padding">
-                                    <!--<span class="reading-time">6 min de leitura</span>-->
-                                </div>
-                                <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
-                                    <h3 class="title">
-                                        <a href="<?php the_permalink(); ?>"
-                                           title="<?php the_title(); ?>"><?php the_title(); ?>
-                                        </a>
-                                    </h3>
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
-                                </div>
-                            </div>
-                        </article>
-
-                    <?php endwhile; endif; wp_reset_postdata(); ?>
-                </aside>
-
-                <div class="col-md-8">
-
-                    <?php $args = array('category_name' => 'artigos', 'posts_per_page' => 1,);
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-
-                        <article class="article-box box-img box-img-land box-img-land-2 corner">
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                <img src="<?php the_post_thumbnail_url('chalita-palestras-thumb'); ?>" class="corner hidden-xs"/>
-                                <img src="<?php the_post_thumbnail_url('chalita-artigo-thumb-mobile'); ?>" class="corner visible-xs"/>
-                            </a>
-                            <i class="fa fa-bookmark-o"></i>
-                            <div class="box-title row">
-                                <div class="col-md-6 no-padding">
-                                    <a href="#" class="cat">Tech</a>
-                                </div>
-                                <div class="col-md-6 text-right no-padding">
-                                    <!--<span class="reading-time">6 min de leitura</span>-->
-                                </div>
-                                <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
-                                    <h3 class="title">
-                                        <a href="<?php the_permalink(); ?>"
-                                           title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                                    </h3>
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
-                                </div>
-                            </div>
-                        </article>
-
-                    <?php endwhile; endif; wp_reset_postdata(); ?>
+                <div class="col-md-12">
+                    <p class="text-center"><a href="#" id="load-more-articles-btn">Carregar mais</a></p>
                 </div>
-
             </div>
 
 
