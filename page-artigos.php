@@ -27,7 +27,12 @@ get_header('all');
                                     <i class="fa fa-bookmark-o"></i>
                                     <div class="box-title row">
                                         <div class="col-md-12 no-padding">
-                                            <a href="#" class="cat">Tech</a>
+                                            <?php
+                                            $post_tags = get_the_tags();
+                                            if ($post_tags) {
+                                                echo '<a href="#" class="cat">' . $post_tags[0]->name . '</a>';
+                                            }
+                                            ?>
                                         </div>
                                         <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
                                             <h3 class="title">
@@ -72,7 +77,12 @@ get_header('all');
                                     </a>
                                     <div class="box-title row">
                                         <div class="col-md-12 no-padding">
-                                            <a href="#" class="cat">Tech</a>
+                                            <?php
+                                            $post_tags = get_the_tags();
+                                            if ($post_tags) {
+                                                echo '<a href="#" class="cat">' . $post_tags[0]->name . '</a>';
+                                            }
+                                            ?>
                                         </div>
                                         <div class="col-md-12 no-padding-left <?php echo has_post_thumbnail() ? 'article-box-heading article-box-heading--less-padding' : 'article-box-heading article-box-heading--news-special'; ?> ">
                                             <h3 class="title">

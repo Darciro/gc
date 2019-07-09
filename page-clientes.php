@@ -10,7 +10,9 @@ get_header('all');
                 <?php
                 $args = array(
                     'post_type' => 'clientes',
-                    'posts_per_page' => -1
+                    'posts_per_page' => -1,
+                    'order' => 'ASC',
+                    'orderby' => 'title'
                 );
                 $the_query = new WP_Query($args);
 
@@ -25,7 +27,9 @@ get_header('all');
                                 echo '<a href="'. $client_url .'" target="_blank">';
                             } ?>
 
-                            <div class="client-item-thumb" style="background-image:url('<?php echo $featured_img_url; ?>')"></div>
+                            <div class="client-item-thumb"
+                                 style="background-image:url('<?php echo $featured_img_url; ?>')"
+                                 title="<?php the_title(); ?>"></div>
 
                             <?php if( $client_url ){
                                 echo '</a>';
