@@ -83,19 +83,19 @@
                     </a>
                     <div class="box-title row">
                         <div class="col-md-6 no-padding">
-                            <a href="#" class="cat">Tech</a>
+                            <?php
+                            $post_tags = get_the_tags();
+                            if ($post_tags) {
+                                echo '<a href="#" class="cat">' . $post_tags[0]->name . '</a>';
+                            }
+                            ?>
                         </div>
-                        <div class="col-md-6 text-right no-padding">
-                            <!--<span class="reading-time">6 min de leitura</span>-->
-                        </div>
-                        <div class="col-md-12 no-padding">
+                        <div class="col-md-12 no-padding-left article-box-heading article-box-heading--less-padding">
                             <h3 class="title">
                                 <a href="<?php the_permalink(); ?>"
                                    title="<?php the_title(); ?>"><?php the_title(); ?>
                                 </a>
                             </h3>
-                        </div>
-                        <div class="col-md-12 no-padding">
                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="leia">Leia</a>
                         </div>
                     </div>
