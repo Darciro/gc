@@ -344,7 +344,7 @@ function sydney_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_style('sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), '090820192107');
+	wp_enqueue_style('sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), '09082019');
 
 	wp_enqueue_script('galdar-custom-js', get_template_directory_uri() . '/js/galdar-custom.js', array('jquery'), '080720192107', true);
 	wp_localize_script('galdar-custom-js', 'gs', array(
