@@ -74,8 +74,11 @@ get_header('all');
 			        </div>
 
 		        <?php endwhile; wp_reset_postdata(); endif; ?>
+				
 	        </div>
-
+				<div class="text-center bt-extra">
+					<a href="<?php echo get_bloginfo('url') ?>/clientes" class="leia">Ver todos os clientes</a>
+				</div>
         </div>
     </main>
 </div>
