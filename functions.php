@@ -671,7 +671,7 @@ function load_more_works_cpt()
         'category_name' => 'obras',
         'posts_per_page' => 12,
         'order' => 'ASC',
-        'orderby' => 'title',
+        'orderby' => 'name'
     );
 	$the_query = new WP_Query($args);
 	if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>

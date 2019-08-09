@@ -12,28 +12,6 @@ get_header('all');
                 'posts_per_page' => 18,
                 'order' => 'ASC',
                 'orderby' => 'name'
-
-                /*'orderby' => array(
-                    'city_clause' => 'ASC',
-                    'state_clause' => 'DESC',
-                ),*/
-
-                /*'orderby' => array( 'title' => 'ASC', 'meta_value' => 'DESC' ),
-                'meta_key' => 'feature_book',
-                'order'    => 'ASC',*/
-                /*'meta_query'     => array(
-                    array(
-                        'key'       => 'feature_book',
-                        'value'     => true,
-                        'compare'   => '=='
-                    )
-                ),*/
-                // 'orderby'  => 'meta_value',
-                // 'meta_key' => 'location_level1_value',
-                // 'order'    => 'ASC',
-
-                // orderby' => array( 'title' => 'ASC', 'meta_value' => '1' ),
-
             );
             $the_query = new WP_Query($args);
             if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
