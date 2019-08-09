@@ -344,7 +344,7 @@ function sydney_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_style('sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), '080720192107');
+	wp_enqueue_style('sydney-custom', get_template_directory_uri() . '/css/custom.css', array(), '090820192107');
 
 	wp_enqueue_script('galdar-custom-js', get_template_directory_uri() . '/js/galdar-custom.js', array('jquery'), '080720192107', true);
 	wp_localize_script('galdar-custom-js', 'gs', array(
@@ -1036,3 +1036,26 @@ function load_more_articles()
 
     wp_send_json_success($data);
 }
+
+function set_book_feature_category($post_id)
+{
+    if ($parent_id = wp_is_post_revision($post_id))
+        $post_id = $parent_id;
+
+    if (in_category('mais-vendidos', $post_id)) {
+        remove_action('save_post', 'set_book_feature_category');
+
+        update_post_meta($post_id, 'original_post_name', get_post_field('post_name', $post_id));
+        wp_update_post(array('ID' => $post_id, 'post_name' => '0-' . get_post_field('post_name', $post_id)));
+
+        add_action('save_post', 'set_book_feature_category');
+    } else {
+
+        if ( get_post_meta($post_id, 'original_post_name') ) {
+            wp_update_post(array('ID' => $post_id, 'post_name' => get_post_meta($post_id, 'original_post_name')));
+            delete_post_meta($post_id, 'original_post_name');
+        }
+
+    }
+}
+add_action('save_post', 'set_book_feature_category');

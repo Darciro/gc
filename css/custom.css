@@ -1008,6 +1008,35 @@ img.width-100 {
     display: none;
 }
 
+.page-template-page-palestras .owl-theme .owl-controls{
+    display: none !important;;
+    margin: 0 !important;
+}
+
+.page-template-page-palestras .bt-extra {
+    margin: 0 !important;
+}
+
+.page-template-page-palestras .bt-extra .leia {
+    float: none;
+    clear: both;
+    text-align: center;
+    display: inline-block;
+
+    background: #b8c671;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #fff !important;
+    font-size: 14px !important;
+    padding: 2px 15px;
+    font-family: Arial;
+    margin-top: 0;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
 @media (max-width: 1024px) {
 
     #slideshow {
